@@ -61,7 +61,7 @@ class Main extends MainApp
 	public function new() 
 	{
 		super({
-				cookie:"mobile_trouble_20210118.user",
+				cookie:"mobile_trouble_20210129.user",
 				scriptName:"mobile_trouble"
 				
 		});
