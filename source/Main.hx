@@ -1,10 +1,12 @@
 package;
 
+import coverage.gis._CheckNetWork;
 import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.FlxState;
 import flixel.input.keyboard.FlxKey;
 import tstool.layout.UI;
+import tstool.process.Process;
 //import flixel.system.FlxAssets;
 import flixel.text.FlxText.FlxTextFormat;
 import flixel.text.FlxText.FlxTextFormatMarkerPair;
@@ -14,11 +16,11 @@ import tstool.MainApp;
 
 import js.Browser;
 import js.html.Location;
-import lime.utils.Assets;
+//import lime.utils.Assets;
 //import openfl.display.Sprite;
 import tstool.layout.History;
 import tstool.layout.Login;
-import tstool.layout.SaltColor;
+//import tstool.layout.SaltColor;
 import tstool.salt.Agent;
 import tstool.salt.Customer;
 import tstool.utils.Csv;
@@ -47,13 +49,14 @@ class Main extends MainApp
 	public static var VERSION_TRACKER:VersionTracker;
 	public static var LOCATION:Location;
 	public static var DEBUG:Bool;
+	public static var DEBUG_LEVEL:Int;
 	public static var COOKIE: FlxSave;
 	
-	//public static var LANGS:Array<String> = ["fr-FR", "de-DE", "en-GB"];
-	public static var LANGS:Array<String> = ["fr-FR"];
-	//public static var LANGS = ["fr-FR", "de-DE"];
-	public static inline var LAST_STEP:Class<FlxState> = End;
-	public static inline var INTRO_PIC:String = "intro/Mobile-Phone-Trouble-Shooting.jpg";
+	public static var LANGS:Array<String> = ["fr-FR","de-DE","en-GB","it-IT"];
+	public static inline var LAST_STEP:Class<Process> = End;
+	public static inline var START_STEP:Class<Process> = Intro;
+	public static inline var INTRO_PIC:String = "intro/favicon.png";
+	public static inline var LIB_FOLDER_LOGIN:String= "/commonlibs/";
 	/**
 	 * FORMAT COLOR
 	 * */
@@ -61,7 +64,7 @@ class Main extends MainApp
 	public function new() 
 	{
 		super({
-				cookie:"mobile_trouble_20210129.user",
+				cookie:"mobile_trouble_20210205.user",
 				scriptName:"mobile_trouble"
 				
 		});
@@ -72,39 +75,37 @@ class Main extends MainApp
 		LOCATION = MainApp.location;
 		track =  MainApp.xapiTracker;
 		DEBUG = MainApp.debug;
+		DEBUG_LEVEL = 1;
 		VERSION_TRACKER = MainApp.versionTracker;
 		customer = MainApp.cust;
-		
-		#if debug
-		//addChild(new FlxGame(1400, 880, IsCompTicketOpened, 1, 30, 30, true, true));
-		//addChild(new FlxGame(1400, 880, _SelectPP, 1, 30, 30, true, true));
-		//addChild(new FlxGame(1400, 880, ElligibleForRet, 1, 30, 30, true, true));
-		//addChild(new FlxGame(1400, 880, ActivateInternetEurope, 1, 30, 30, true, true));
-		//addChild(new FlxGame(1400, 880, Login, 1, 30, 30, true, true));
-		addChild(new FlxGame(1400, 880, Intro, 1, 30, 30, true, true));
-		#else			
 		addChild(new FlxGame(1400, 880, Login, 1, 30, 30, true, true));
-		#end
 
 	}
-	/*static public function TOGGLE_MAIN_STYLE()
-	{
-		THEME = THEME == WHITE_THEME ? DARK_THEME: WHITE_THEME;
-	}*/
+	
 	static public function setUpSystemDefault(?block:Bool = false )
 	{
 		FlxG.sound.soundTrayEnabled = false;
 		FlxG.mouse.useSystemCursor = block;
 		FlxG.keys.preventDefaultKeys = block ? [FlxKey.BACKSPACE, FlxKey.TAB] : [FlxKey.TAB];
-		//FlxG.keys.preventDefaultKeys = [FlxKey.TAB];
 	}
     static public function MOVE_ON(?old:Bool=false)
 	{
+		var next:Process = new Intro();
+		var tuto:Process = new Tuto();
 		setUpSystemDefault(true);
-		//trace("Main::MOVE_ON::MOVE_ON");
 		#if !debug
 		Main.track.setActor();
 		#end
-		tongue.initialize(MainApp.agent.mainLanguage, ()->(FlxG.switchState( old ? new Intro(): new Intro() )) );
+		#if debug
+			/**
+			 * USe this  to debug a slide
+			 */
+			next = new Intro();
+			//next = new _CheckNetWork();
+		#end
+		#if debug
+		trace("Main::MOVE_ON::MOVE_ON", MOVE_ON );
+		#end
+		tongue.initialize(MainApp.agent.mainLanguage, ()->(FlxG.switchState( old ? next : tuto)) );
 	}
 }

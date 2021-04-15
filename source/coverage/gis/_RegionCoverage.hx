@@ -35,6 +35,7 @@ class _RegionCoverage extends ActionRadios
 	{
 		if (validate())
 		{
+			//this._nexts = [{step: status.get(G4) == NOK && status.get(G3) == NOK ?_ThreeOneTwo:IsGisFailure}];
 			this._nexts = [{step: status.get(G4) == NOK && status.get(G3) == NOK ?_ThreeOneTwo:IsGisFailure}];
 			super.onClick();
 		}

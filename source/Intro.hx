@@ -4,6 +4,7 @@ import capture.IsTicketOpened;
 import capture.WhereAreU;
 import js.Browser;
 import tstool.layout.UI;
+import tstool.process.ActionRadios;
 //import js.Browser;
 import tstool.MainApp;
 //import tstool.layout.UI;
@@ -17,10 +18,37 @@ import tstool.process.Triplet;
  * ...
  * @author bb
  */
-class Intro extends Triplet
+class Intro extends ActionRadios
 {
+	public static inline var ISSUE:String = "Issue";
+	public static inline var NO_CALLS:String = "NoCalls";
+	public static inline var BAD_CALL_QUALITY:String = "BadCalls";
+	public static inline var DROP_CALLS:String = "DropCalls";
+	public static inline var NO_INTERNET:String = "NoInternet";
+	public static inline var SLOW_INTERNET:String = "SlowInternet";
+	public static inline var NO_INTL_CALLS:String = "NoIntlCalls";
+	public static inline var REF_600:String = "NumberWronglyDisplayedAbroad";
 
-	
+	public function new() 
+	{
+		super(
+		[
+			{
+				title: ISSUE,
+				values: [NO_CALLS, BAD_CALL_QUALITY, DROP_CALLS, NO_INTERNET, SLOW_INTERNET, NO_INTL_CALLS, REF_600]
+			}
+		]
+		);
+		
+	}
+	override public function onClick():Void
+	{
+		this._nexts = [{step:  getNext(), params: []}];
+		super.onClick();
+	}
+	inline function getNext():Class<Process>{
+		return IsTicketOpened;
+	}
 	override public function create()
 	{
 		Main.customer.reset();
@@ -49,24 +77,5 @@ class Intro extends Triplet
 		else{
 			closeSubState();
 		}
-	}
-	
-	override public function onYesClick():Void
-	{
-		this._nexts = [{step: IsTicketOpened}];
-		super.onYesClick();
-	}
-	
-	
-	override public function onNoClick():Void
-	{
-		this._nexts = [{step: IsTicketOpened}];
-		super.onNoClick();
-	}
-	
-	override public function onMidClick():Void
-	{
-		this._nexts = [{step: IsTicketOpened}];
-		super.onMidClick();
 	}
 }

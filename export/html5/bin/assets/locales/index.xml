@@ -21,10 +21,31 @@
 	<file id="data" value="mobile_sim_fr.txt"/>
 	<file id="data" value="mobile_trouble_fr.txt"/>
 	
+		<file id="data" value="mobile_barrings_de.txt"/>
+	<file id="data" value="mobile_calls_de.txt"/>
+	<file id="data" value="mobile_coverage_de.txt"/>
+	<file id="data" value="mobile_sim_de.txt"/>
+	<file id="data" value="mobile_trouble_de.txt"/>
+	
+			<file id="data" value="mobile_barrings_it.txt"/>
+	<file id="data" value="mobile_calls_it.txt"/>
+	<file id="data" value="mobile_coverage_it.txt"/>
+	<file id="data" value="mobile_sim_it.txt"/>
+	<file id="data" value="mobile_trouble_it.txt"/>
+	
+			<file id="data" value="mobile_barrings_en.txt"/>
+	<file id="data" value="mobile_calls_en.txt"/>
+	<file id="data" value="mobile_coverage_en.txt"/>
+	<file id="data" value="mobile_sim_en.txt"/>
+	<file id="data" value="mobile_trouble_en.txt"/>
+	
 	<!--<file id="data" value="mobile_trouble_de.txt"/>-->
 	<!--<file id="data" value="mobile_trouble_en.txt"/>-->
     
     <file id="meta" value="meta_fr.txt"/>
+    <file id="meta" value="meta_de.txt"/>
+    <file id="meta" value="meta_it.txt"/>
+    <file id="meta" value="meta_en.txt"/>
 	<!--<file id="meta" value="meta_it.txt"/>-->
 	<!--<file id="meta" value="meta_de.txt"/>-->
 	<!--<file id="meta" value="meta_en.txt"/>-->

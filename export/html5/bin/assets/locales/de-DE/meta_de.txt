@@ -1,12 +1,10 @@
 flag	UI1	UI2	UI3
-$defaultBtn	Nein	Weiter	Ja
-$flow.nointernet.vti.CheckContractorVTI	Die VoIP-Nummer einfügen (CTRL+V)	(Format 41123456789)	
-$helpBtn	SHIFT+Q (mehr in		
-$voipCopyPaste	Ctrl+C zum Kopieren		
-$needUpdate	Neue Version verfügbar. Dieses Dialogfenster schliessen und den Browser aktualisieren. (F5).		
-$describeIssue	Das Anliegen des Kunden beschreiben: 		
-$cycleTime	Geschätzte Bearbeitungszeit: <X> Tag(e)		
-$summary	Zusammenfassung		
-$verifiyContactDetails	Überprüft, ob die Kontaktnummer des Kunden korrekt ist und/oder fügt die Nr. ins Memo oben ein, damit wir den Kunden bei Bedarf erreichen können.<N>		
-			
-			
+$defaultBtn	Non	Avancer	Oui
+$flow.nointernet.vti.CheckContractorVTI	Coller (CTRL+V) le N° VoIP	(Format 41123456789)
+$helpBtn	SHIFT+Q (détails dans 
+$voipCopyPaste	Ctrl+C pour le copier
+$needUpdate	Une nouvelle version est disponible. Quand tu fermera cette boîte de dialogue la page se rafraîchira pour la charger.
+$describeIssue	Décris le souci du client : 
+$cycleTime	Temps de traitement estimé : <X> jours(s)
+$summary	Résumé
+$verifiyContactDetails	Verifiez que le numéro de contact du client est correct et/ou ajoutez-le dans le mémo ci-dessus afin que nous puissions le joindre si besoin.<N>

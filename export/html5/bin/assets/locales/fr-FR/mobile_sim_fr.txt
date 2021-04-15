@@ -1,5 +1,5 @@
 FLAG	DETAILS	TITLE	ILLUSTRATION	RIGHT-BTN	LEFT-BTN	MID-BTN	QOOK
-$sim.CanSwapSimInOtherDevice		Pourriez-vous essayer d'insérer votre carte SIM dasn un autre appereil ?<N>Cela résout-il les problèmes ?		Oui	Non toujours pareil	pas pu essayer dans autre appareil	
-$sim._OrderNeewOneForFree		Je vais vous faire envoyer une nouvelle carte SIM gratuitement.					
-$sim.IsOldSim	Changer la SIM si :<N><T>- Elle a plus de 4 ans.<N><T>- Elle a étée décopué pour entrer dans un slot nano. 	Je regarde si votre carte SIM est recente,<N>A-t-elle était décopuée ?		Vielle (+4ans)	Récente		https://qoom.salt.ch/customer-process/use_trouble/order-swapsim/changing_the_sim_card_sim_swap
-$flow.TutoTree			ui/tutoKeyboardFR				
+$sim.CanSwapSimInOtherDevice		Pourriez-vous essayer d'insérer votre carte SIM dasn un autre appereil ?<N>Cela résout-il les problèmes ?		Oui	Non toujours pareil	Pas pu essayer dans autre appareil
+$sim._OrderNeewOneForFree		Je vais vous faire envoyer une nouvelle carte SIM gratuitement.
+$sim.IsOldSim	Changer la SIM si :<N><T>- elle a plus de 4 ans.<N><T>- elle a été découpée pour entrer dans un slot nano. 	Je regarde si votre carte SIM est recente,<N> elle a été découpée ?		Vielle (+4ans) ou découpée	Récente		https://qoom.salt.ch/customer-process/use_trouble/order-swapsim/changing_the_sim_card_sim_swap
+$flow.TutoTree			ui/tutoKeyboardFR

@@ -3,6 +3,7 @@ package coverage;
 import barrings.IsInCollection;
 import calls.TypeOfSubscription;
 import calls._NoImpactOnPartnersNetworkQuality;
+import tstool.layout.History.ValueReturn;
 import tstool.process.Action;
 import tstool.process.Process;
 
@@ -20,7 +21,8 @@ class _TempFailureFromPartner extends Action
 	}
 	function branchMe():Class<Process>
 	{
-		return if (Main.HISTORY.isClassInteractionInHistory(Intro, Yes))
+		var issue:ValueReturn = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
+		return if (issue.value == Intro.NO_CALLS)
 		{
 			/*******************
 			/* Cannot make calls

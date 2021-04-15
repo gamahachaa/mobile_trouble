@@ -1,0 +1,16 @@
+FLAG	DETAILS	TITLE	ILLUSTRATION	RIGHT-BTN	LEFT-BTN	MID-BTN	QOOK
+$coverage.gis.IsQoomMajorIncident	Alcuni incidenti sono riportati in Qoom prima di essere riportati in GIS.	Controllo se c'è un avviso eccezionale nel nostro sistema informativo Qoom.		avviso	nessun avviso
+$coverage.gis.IsGisFailure	Attivare il livello <Q>outage<Q>.	Consulto il nostro sistema GIS per vedere se è stato segnalato un incidente nella sua posizione.	incidente	nessun incidente	
+$coverage.gis._TechnicianAreOnIt	Essere molto comprensivi e rispettosi con il cliente perché alcuni problemi legati all'impossibilità di comunicare possono essere molto delicati a seconda della situazione. 	 I nostri tecnici stanno lavorando senza sosta per risolvere il problema!
+$coverage.gis._RegionCoverage	Senza tener conto dell'<Q>outage<Q> (eseguito nello step successivo).	Verifico se ha una copertura adeguata.
+$coverage.gis._CheckNetWork	Analizzare la copertura in GIS. <N>Inserire qui l'indirizzo come appare sopra il marcatore in GIS.	Dove si trova esattamente? <N>Sto guardando la copertura di rete nel luogo in cui si trova.					https://network.salt.ch/maps/
+$coverage._TempFailureFromPArtner		Sembra esserci un incidente temporaneo; <N> il nostro partner lo sta risolvendo e tutto dovrebbe tornare alla normalità a breve. 
+$coverage._OurPartnerHasNoCoverageHere		Sembra che il nostro partner di telecomunicazione non abbia copertura di rete dove si trova ora.
+$coverage.HasItWorkedBefore	Qui si cerca di determinare se si tratta di un incidente temporale.<N>Se la persona si trova in questo luogo per la prima volta, se è la prima volta che prova a fare una chiamata, e non funziona, allora cliccare su "MAI".	In precedenza dove si trova ora poteva fare una telefonata?<N>O non ha mai funzionato da quando è arrivato?		Prima funzionava	Mai
+$coverage._CouldBeNetwork		Sembra che si sia verificato un incidente di rete ancora sconosciuto ai nostri servizi.<N>Se questo è il caso lo trasmetterò ai servizi tecnici.<N>Nel frattempo analizzerò se ci sono altre configurazioni nel suo profilo che potrebbero causare un problema.      
+$coverage.AreOtherUsersAffected	Si tratta di determinare se si tratta di un problema specifico del cliente che chiama o se si tratta di un incidente tecnico legato alla rete. 	Ci sono altri utenti coinvolti nel problema?			No	Non lo so 
+$coverage._SelectManuallyAnotherProvider		Provare a cambiare operatore manualmente.		Cambiato	Cambio impossibile		https://fiber.salt.ch/options-services/upgrade-repair/device-help
+$coverage._ChangeTechno		Provare a cambiare la tecnologia di rete (4G -> 3G).					https://fiber.salt.ch/options-services/upgrade-repair/device-help
+$coverage.InsideOrOutside		Si trova dentro o fuori l'edificio?		Dentro	Fuori
+$coverage.HowIsCoverage	<T>- <b>Buona<b>: 3 o più barre<N><T>-<b>Cattiva<b>: meno di 3 barre<N><T>- <b>Nessuna connessione<b>: nessuna barra o operatore (solo chiamate d'emergenza)	Com'è la copertura?		Buona	Cattiva	Nessuna copertura	https://qoom.salt.ch/productservices/telephony/mobile_internet-networks_technologies_and_units_of_measurement
+$flow.TutoTree			ui/tutoKeyboardFR

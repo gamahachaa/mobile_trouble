@@ -1,19 +1,20 @@
 package ticket;
 
 import _AddMemoInMarilyn;
-import tstool.process.ActionMail;
+
+import tstool.process.ActionTicket;
 import tstool.salt.SOTickets;
 
 /**
  * ...
  * @author bb
  */
-class _FiveOneOne extends ActionMail 
+class _FiveThreeOne extends ActionTicket 
 {
 
 	public function new() 
 	{
-		super(SOTickets.MOBILE_511);
+		super(SOTickets.MOBILE_531);
 	}
 	override public function onClick():Void
 	{

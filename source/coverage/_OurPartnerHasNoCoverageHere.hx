@@ -21,7 +21,8 @@ class _OurPartnerHasNoCoverageHere extends Action
 	}
 	function branchMe():Class<Process>
 	{
-		return if (Main.HISTORY.isClassInteractionInHistory(Intro, Yes))
+		var issue = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
+		return if (issue.value == Intro.NO_CALLS)
 		{
 			/*******************
 			/* Cannot make calls

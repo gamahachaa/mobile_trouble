@@ -1,0 +1,10 @@
+FLAG	DETAILS	TITLE	ILLUSTRATION	RIGHT-BTN	LEFT-BTN	MID-BTN	QOOK
+$barrings.IsInCollection	Here you can check whether the customer is in collection. If the customer is blocked for non-payment, there is no need to continue with the technical troubleshooting.	I verify if there is a financial barring.		In collection	Not in collection
+$barrings.IsCollectionMailBoxMessage		When you try to make a call<N> do you hear a message telling you that you are barred for non-payment?		Yes	No message
+$barrings.DeviceRestart	Here, too, after a configuration change, the system restarts in order to be up to date.	Please reboot your device for the changes I have just applied in the system to take effect. 
+$barrings._SpecialProcessForBarringRemoval		I will undertake the necessary steps to unblock your services. 					https://qoom.salt.ch/customer-process/subscriptions-cost/unblock_services/unblock_fraud_blocked_services|https://qoom.salt.ch/customer-process/subscriptions-cost/unblock_services/unblock_creditlimit_blocked_services
+$barrings.WasUnbarrPossible	It is possible that you do not have the authorizations (in the case of Fraud or limited credit for example.<N>Follow then the procedure in Qoom (click below to open the doc).	I'm checking to see if I can removed the barring in CRM.		Without problems	Unblocking not possible
+$barrings._RemoveBarring	Unblock only if the customer is <b>owner<b> and it is his wish.	With your authorisation, I remove the barring.
+$barrings._RemovePremimBarring	Unblock only if the customer is <b>owner<b> and it is his or her wish to make premium calls (value-added numbers, usually chargeable).	With your authorisation, I remove the call barring to premium numbers.
+$barrings.ArethereAnyBarrings	Before managing the <Q>customer<Q> or <Q>operator<Q> barrings, clearly identify the caller as the  <b>owner<b> of the subscription! 	I check your account for any service barrings. 			None	Premium
+$barrings._Pay		You have to pay the overdue amount.<N>The payment will unblock the services automatically.

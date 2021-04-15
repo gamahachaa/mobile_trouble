@@ -6,7 +6,7 @@ import tstool.process.Action;
  * ...
  * @author bb
  */
-class _RemoveCallBarring extends Action 
+class _RemoveBarring extends Action 
 {
 
 	override public function onClick():Void

@@ -1,0 +1,15 @@
+FLAG	DETAILS	TITLE	ILLUSTRATION	RIGHT-BTN	LEFT-BTN	MID-BTN	QOOK
+$calls.numbers.CouldItBeYouWereBlocked	<em>Bitte formuliert dies so höflich wie möglich, weil der Kunde verärgert reagieren könnte (z. B. bei Blockierung durch den Partner oder ein Familienmitglied)	Kann es sein, dass die Person Sie blockiert hat?
+$calls.numbers._IfOtherTooThan	Wenn andere Personen diese Nummer nicht erreichen können, stellt dies kein Vertragsproblem dar.	In diesem Fall liegt das Problem an der von Ihnen angerufenen Nummer.
+$calls.numbers.HowManyNumberAffected		Haben Sie diese Probleme mit mehreren Nummern oder nur einer einzelnen?		Mit einer einzelnen	Mit allen
+$calls.numbers.HowLongDoYouStayAbroad		Wie lange bleiben Sie noch im Ausland?		7 Tage oder länger	Weniger als 7 Tage
+$calls.numbers._EnsureNumbersAreDiledCorrectly	Prüfe mit dem Kunden, ob keine Ziffer fehlt und dass die Ländervorwahl <em>richtig<em> eingegeben wurde.<N>Insbesondere im Roaming. 	Haben Sie möglicherweise die Nummer(n) falsch eingegeben?
+$calls.numbers.WhatBound		Besteht die Störung bei eingehenden oder ausgehenden Anrufen?		Ausgehenden	Eingehenden	Bei beiden
+$calls.HowManyCallFail		Bei wie vielen von 10 Anrufen treten Probleme auf?		Weniger als 4	4 oder mehr
+$calls._InformOnIssueFactors	<b>Im Gebäudeinneren<b><N><N><T>- Planung und Bau<N><T>- Dicke Wände<N><T>- Isolierung<N><T>- Eingesetzte Baustoffe<N><T>- Elektrogeräte in den Haushalten/Büros<N><N><b>Im Freien<b><N><T>- Geografische und architektonische Merkmale (Hügel/Berge, Gebiet mit Vertiefungen/Schluchten, Wälder, Gebäude)<N><N><b>Zeitliche Faktoren<b><N><T>Zu den Stosszeiten sind bedeutend mehr Nutzer per Antenne verbunden und üben Druck auf die Netzwerkkapazität aus (Sprache und Daten).	Kennen Sie alle Faktoren, die das Funksignal beeinflussen können?
+$calls.WhereExactlyDoesITHappen		Wo stellen Sie diese Qualitätsprobleme oder Anrufunterbrechungen fest?		Überall	Nur dort
+$calls.HasEnoughBalance	Ein Mindestsaldo wird benötigt, damit sichergestellt ist, dass die Anrufe auch durchkommen.	Beträgt der Saldo auf Ihrer Karte mindestens CHF <AMOUNT>.-?		Oui	Nein, bitte aufladen.
+$calls.TypeOfSubscription		Post- oder PrePay-Abonnement		Postpay	PrePay
+$calls._NoImpactOnPartnersNetworkQuality		Wir haben leider keinen Einfluss auf die Netzqualität unseres Partners.		Kein Ticket möglich
+$coverage.HowIsTheCoverage	<T>- <b>Gut<b>: 3 Balken oder mehr<N><T>-<b>Schlecht<b>: weniger als 3 Balken<N><T>- <b>Kein Netz<b>: Keine Balken und kein Provider («Nur Notrufe») 	Wie ist die Abdeckung?		Gut	Schlecht	Kein Netz	https://qoom.salt.ch/productservices/telephony/mobile_internet-networks_technologies_and_units_of_measurement
+$flow.TutoTree			ui/tutoKeyboardFR

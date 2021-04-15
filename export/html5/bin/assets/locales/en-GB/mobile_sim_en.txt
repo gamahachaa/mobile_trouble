@@ -1,0 +1,5 @@
+FLAG	DETAILS	TITLE	ILLUSTRATION	RIGHT-BTN	LEFT-BTN	MID-BTN	QOOK
+$sim.CanSwapSimInOtherDevice		Could you try to insert your SIM card in another device?<N>Does this solve the problem?		Yes	No, still problem	Cannot try in other device
+$sim._OrderNeewOneForFree		I will send you a new SIM card free of charge.
+$sim.IsOldSim	Change the SIM if :N><N><T>- It is more than 4 years old.<N><T>- It has been cut to fit in a nano slot. 	I check if your SIM card is recent,<N>Was it cut?		Old (+4 years) or cut	Recent		https://qoom.salt.ch/customer-process/use_trouble/order-swapsim/changing_the_sim_card_sim_swap
+$flow.TutoTree			ui/tutoKeyboardFR

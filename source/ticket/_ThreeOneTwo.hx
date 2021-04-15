@@ -1,13 +1,13 @@
 package ticket;
 
-import tstool.process.ActionMail;
+import tstool.process.ActionTicket;
 import tstool.salt.SOTickets;
 
 /**
  * ...
  * @author bb
  */
-class _ThreeOneTwo extends ActionMail 
+class _ThreeOneTwo extends ActionTicket 
 {
 
 	public function new() 

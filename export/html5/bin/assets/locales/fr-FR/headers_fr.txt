@@ -1,0 +1,10 @@
+flag	HEADERS
+$coverage.gis._CheckNetWorkGISAddress	Adresse GIS où le soucis survient
+$coverage.gis._CheckNetWorkStreet	Rue
+$coverage.gis._CheckNetWorkNumber	Numéro
+$coverage.gis._CheckNetWorkZip	Code postal
+$coverage.gis._CheckNetWorkCity	Ville
+$calls.numbers.HowManyNumberAffectedSinglenumber	Numéro posant problème
+$capture.IsTicketOpened	Numéro posant problème
+$capture.IsTicketOpenedSOticket	N° ticket S.O.
+$capture.IsTicketOpenedMSISDN	MSISDN

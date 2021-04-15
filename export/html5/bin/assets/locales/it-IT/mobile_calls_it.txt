@@ -1,0 +1,15 @@
+FLAG	DETAILS	TITLE	ILLUSTRATION	RIGHT-BTN	LEFT-BTN	MID-BTN	QOOK
+$calls.numbers.CouldItBeYouWereBlocked	<em>Fare molta attenzione quando si formula questa domanda, dato che l'interlocutore potrebbe offendersi (es.partner o membro della famiglia). 	C'è la possibilità che la persona abbia bloccato il suo numero?
+$calls.numbers._IfOtherTooThan	Se altre persone non posso raggiungere questo numero, non si tratta di un problema legato a questo contratto.	In questo caso il problema sussiste con il numero che ha chiamato.
+$calls.numbers.HowManyNumberAffected		Riscontra questo problema con uno o diversi numeri?		Solo uno	Tutti
+$calls.numbers.HowLongDoYouStayAbroad		Per quanto tempo resterà all'estero?		7 giorni o più	meno di 7 giorni
+$calls.numbers._EnsureNumbersAreDiledCorrectly	Verificare con il cliente che non ci siano cifre mancanti e che il prefisso del paese sia stato<em> inserito correttamente<em>.<N> Prestare attenzione soprattutto se in roaming.	Potrebbe trattarsi di un problema di digitazione errata?
+$calls.numbers.WhatBound		Il problema risulta per le chiamate in entrata o in uscita?		In uscita	In entrata	Entrambe
+$calls.HowManyCallFail		Out of 10 calls, how many are problematic? Su 10 chiamate, con quante ha riscontrato problemi?		meno di 4	4 o più
+$calls._InformOnIssueFactors	<b>All'interno dell'edificio<b><N><N><T>- Concezione e costruzione<N><T>- Muri spessi<N><T>- Isolamento<N><T>- Materiali utilizzati<N><T>- Dispositivi elettornici a casa/in ufficio<N><N><b>En plein air<b><N><T>- Caratteristiche geografiche e architettoniche (colline/montagne, depressioni/valli, foreste; edifici)<N><N><b>Fattori temporali<b><N><T>Durante i periodi di punta, molti più utenti sono collegati tramite antenna e mettono sotto pressione la capacità della rete (voce e dati).	Conosce tutti i fattori che possono influenzare il segnale radio?
+$calls.WhereExactlyDoesITHappen		Dove si verificano questi problemi di qualità o di chiamate interrotte?		Ovunque	Solo qui
+$calls.HasEnoughBalance	È richiesto un saldo minimo per garantire che le chiamate vengano effettuate con successo.	Il saldo sulla sua carta è di almento CHF <QUANTITÀ>.-?		Sì	No, per favore faccia una ricarica
+$calls.TypeOfSubscription		Abbonamento o PrePay 		Abbonamento	Prepay
+$calls._NoImpactOnPartnersNetworkQuality		Purtroppo, non abbiamo alcun controllo sulla qualità della rete del nostro partner.		Creazione del ticket impossibile
+$coverage.HowIsTheCoverage	<T>- <b>Buona<b>: 3 o più barre<N><T>-<b>Cattiva<b>: meno di tre barre<N><T>- <b>Nessuna connessione<b>: Nessuna barra o provider (solo chiamate d'emergenza)	Com'è la copertura?		Buona	Cattiva	Nessuna connessione	https://qoom.salt.ch/productservices/telephony/mobile_internet-networks_technologies_and_units_of_measurement
+$flow.TutoTree			ui/tutoKeyboardFR

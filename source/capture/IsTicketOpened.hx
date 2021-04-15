@@ -1,6 +1,9 @@
 package capture;
 
+import barrings.IsInCollection;
+import calls.ref600.WasHideCallActivated;
 import tstool.layout.History.Interactions;
+import tstool.layout.History.ValueReturn;
 import tstool.process.DescisionMultipleInput;
 import tstool.process.Process;
 
@@ -11,7 +14,7 @@ import tstool.process.Process;
 class IsTicketOpened extends DescisionMultipleInput 
 {
 	static inline var MSISDN:String = "MSISDN";
-	static inline var SO_TICKET:String = "S.O ticket";
+	static inline var SO_TICKET:String = "SO ticket";
 	public function new ()
 	{
 		super(
@@ -58,7 +61,7 @@ class IsTicketOpened extends DescisionMultipleInput
 	override public function onNoClick():Void
 	{
 		//this._nextNoProcesses = [new HighUsageData()];
-		this._nexts = [{step: WhereAreU, params: []}];
+		this._nexts = [{step: next(), params: []}];
 		super.onNoClick();
 		
 	}
@@ -76,6 +79,14 @@ class IsTicketOpened extends DescisionMultipleInput
 	{
 		return true;
 	}*/
-	
+	inline function next():Class<Process>
+	{
+		var issue:ValueReturn = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
+		return switch (issue.value)
+		{
+			case Intro.NO_INTL_CALLS: IsInCollection;
+			case _ : WhereAreU;
+		}
+	}
 	
 }

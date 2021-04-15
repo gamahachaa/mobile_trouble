@@ -1,15 +1,15 @@
 FLAG	DETAILS	TITLE	ILLUSTRATION	RIGHT-BTN	LEFT-BTN	MID-BTN	QOOK
-$calls.numbers.CouldItBeYouWereBlocked	<em>Faire très attention lorsque vous formulez cela car la personne pourrait se vexer (expl: son cpartenaire ou quelqu'un de sa famille)	Se pourrait-il que la personne vous ait bloqué ?					
-$calls.numbers._IfOtherTooThan	Si d'autres personnes n'arrivent pas é joindre ce numéro c'est que cela n'est pas un souci lié à ce contrat.	Dans ce cas le souci vient du numéro que vous avez appelé.					
-$calls.numbers.HowManyNumberAffected		Avez-vous constaté ces soucis avec plusieurs numéros ou un seul ?		Un seul	Tous		
-$calls.numbers.HowLongDoYouStayAbroad		Combien de temps encore restez-vous à l'étranger ?		7 jours ou plus	moins de 7 jours		
-$calls.numbers._EnsureNumbersAreDiledCorrectly	Vérifier avec le client qu'il ne manque pas un chiffre et que le prefixe du pays est <em>correctement saisi<em>.<N>Particulièrement en roaming. 	Pourrait-il s'agir d'une mauvaise saisie du-des numéros ?					
-$calls.numbers.WhatBound		Le dysfonctionnement est pour les appels entrants ou sortants ?		Sortants	Entrants	Les deux	
-$calls.HowManyCallFail		Sur 10 appels combien sont problématiques ?		moins de 4	4 ou plus		
-$calls._InformOnIssueFactors	<b>A l'intérieur du bâtiment<b><N><N><T>- Conception et construction<N><T>- bDes murs épais<N><T>- Isolation<N><T>- Matériaux utilisés<N><T>- Appareils électroniques dans les ménages/bureaux<N><N><b>En plein air<b><N><T>- Caractéristiques géographiques et architecturales (collines/montagnes, terrain dépressions / vallées, forêts ; bâtiments)<N><N><b>Facteurs temporels<b><N><T>Pendant les périodes de pointe, un nombre beaucoup plus important d'utilisateurs sont connectés par antenne et mettent la pression sur la capacité du réseau (voix et données).	Connaissez-vous tous les facteurs pouvant avoir une influcence sur le signal radio ?					
-$calls.WhereExactlyDoesITHappen		Où constatez-vous ces soucis de qualité ou bien d'apopel interrompus ?		Partout	uniquement là		
-$calls.HasEnoughBalance	Il est necessaire d'avoir un solde minimum pour s'assurer que les appels pourront aboutir.	Est-ce que le solde sur votre carte est d'au moins CHF <AMOUNT>.- ?		Oui	Non, va recharger.		
-$calls.TypeOfSubscription		Souscription Post ou Pre pay		Postpay	Prepay		
-$calls._NoImpactOnPartnersNetworkQuality		Nous n'avons malheureusement aucune possibilité d'action sur la qualité du réseau de notre partenaire.		Pas de ticket possible			
-$coverage.HowIsTheCoverage	<T>- <b>Bonne<b> : 3 barres ou plus<N><T>-<b>Mauvaise<b> : moins de trois barres<N><T>- <b>Nulle<b> : Pas de barres et pas de fournisseur ("appel d'urgence uniquement" 	Comment est la couverture ?		Bonne	Mauvaise	Nulle	https://qoom.salt.ch/productservices/telephony/mobile_internet-networks_technologies_and_units_of_measurement
-$flow.TutoTree			ui/tutoKeyboardFR				
+$calls.numbers.CouldItBeYouWereBlocked	<em>Faire très attention lorsque vous formulez cela, car la personne pourrait se vexer (p. ex.: son partenaire ou quelqu'un de sa famille).	Se pourrait-il que la personne vous ait bloqué ?
+$calls.numbers._IfOtherTooThan	Si d'autres personnes n'arrivent pas à joindre ce numéro, il ne s'agit pas d'un souci lié à ce contrat.	Dans ce cas le souci vient du numéro que vous avez appelé.
+$calls.numbers.HowManyNumberAffected		Avez-vous constaté ce soucis avec plusieurs numéros ou un seul ?		Un seul	Tous
+$calls.numbers.HowLongDoYouStayAbroad		Combien de temps encore restez-vous à l'étranger ?		7 jours ou plus	moins de 7 jours
+$calls.numbers._EnsureNumbersAreDiledCorrectly	Vérifier avec le client qu'il ne manque pas un chiffre et que le prefixe du pays est <em>correctement saisi<em>.<N>Particulièrement en roaming. 	Pourrait-il s'agir d'une mauvaise saisie du/des numéro/s ?
+$calls.numbers.WhatBound		Le dysfonctionnement est pour les appels entrants ou sortants ?		Sortants	Entrants	Les deux
+$calls.HowManyCallFail		Sur 10 appels combien sont problématiques ?		moins de 4	4 ou plus
+$calls._InformOnIssueFactors	<b>A l'intérieur du bâtiment<b><N><N><T>- Conception et construction<N><T>- Des murs épais<N><T>- Isolation<N><T>- Matériaux utilisés<N><T>- Appareils électroniques dans les ménages/bureaux<N><N><b>En plein air<b><N><T>- Caractéristiques géographiques et architecturales (collines/montagnes, terrain dépressions / vallées, forêts ; bâtiments)<N><N><b>Facteurs temporels<b><N><T>Pendant les périodes de pointe, un nombre beaucoup plus important d'utilisateurs sont connectés par antenne et mettent la pression sur la capacité du réseau (voix et données).	Connaissez-vous tous les facteurs pouvant avoir une influcence sur le signal radio ?
+$calls.WhereExactlyDoesITHappen		Où constatez-vous ces soucis de qualité ou bien d'appels interrompus ?		Partout	uniquement là
+$calls.HasEnoughBalance	Il est necessaire d'avoir un solde minimum pour s'assurer que les appels pourront aboutir.	Est-ce que le solde sur votre carte est d'au moins CHF <AMOUNT>.- ?		Oui	Non, va recharger.
+$calls.TypeOfSubscription		Souscription Post ou Prepay		Postpay	Prepay
+$calls._NoImpactOnPartnersNetworkQuality		Nous n'avons malheureusement aucune possibilité d'action sur la qualité du réseau de notre partenaire.		Pas de ticket possible
+$coverage.HowIsTheCoverage	<T>- <b>Bonne<b> : 3 barres ou plus<N><T>-<b>Mauvaise<b> : moins de 3 barres<N><T>- <b>Nulle<b> : pas de barres et pas de fournisseur ("appels d'urgence uniquement")	Comment est la couverture ?		Bonne	Mauvaise	Nulle	https://qoom.salt.ch/productservices/telephony/mobile_internet-networks_technologies_and_units_of_measurement
+$flow.TutoTree			ui/tutoKeyboardFR

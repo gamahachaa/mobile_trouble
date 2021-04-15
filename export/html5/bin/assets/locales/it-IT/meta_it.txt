@@ -1,10 +1,10 @@
 flag	UI1	UI2	UI3
-$defaultBtn	No	Next	Sì
-$flow.nointernet.vti.CheckContractorVTI	Incolla (CTRL+V) il N° VoIP	(Formato 41123456789)	
-$helpBtn	SHIFT+Q (dettagli su		
-$voipCopyPaste	Ctrl+C per copiarlo		
-$needUpdate	È disponibile una nuova versione. Chiudere questa finestra di dialogo e aggiornare il browser (F5).		
-$describeIssue	Descrivere il problema del cliente: 		
-$cycleTime	Tempo di elaborazione stimato: <X> giorno/i		
-$summary	Riepilogo		
-$verifiyContactDetails	Verificare in VTI che il numero di telefono di contatto sia corretto e/o aggiungerlo nella nota qui sopra in modo che i nostri tecnici possano raggiungerlo.<N><N>		
+$defaultBtn	Non	Avancer	Oui
+$flow.nointernet.vti.CheckContractorVTI	Coller (CTRL+V) le N° VoIP	(Format 41123456789)
+$helpBtn	SHIFT+Q (détails dans 
+$voipCopyPaste	Ctrl+C pour le copier
+$needUpdate	Une nouvelle version est disponible. Quand tu fermera cette boîte de dialogue la page se rafraîchira pour la charger.
+$describeIssue	Décris le souci du client : 
+$cycleTime	Temps de traitement estimé : <X> jours(s)
+$summary	Résumé
+$verifiyContactDetails	Verifiez que le numéro de contact du client est correct et/ou ajoutez-le dans le mémo ci-dessus afin que nous puissions le joindre si besoin.<N>

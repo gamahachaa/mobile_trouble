@@ -6,6 +6,8 @@ import calls.WhereExactlyDoesITHappen;
 import calls._NoImpactOnPartnersNetworkQuality;
 import capture.WhereAreU;
 import coverage.gis._CheckNetWork;
+import sim.IsOldSim;
+import tstool.layout.History.ValueReturn;
 import tstool.process.Process;
 import tstool.process.Triplet;
 
@@ -49,12 +51,13 @@ class HowIsCoverage extends Triplet
 	}
 	inline function goNextYes():Class<Process>
 	{
-		return if (Main.HISTORY.isClassInteractionInHistory(Intro, Yes))
+		var issue:ValueReturn = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
+		return if (issue.value == Intro.NO_CALLS)
 		{
 			/******** NO calls at all *********/
 			TypeOfSubscription;
 		}
-		else {
+		else if (issue.value == Intro.BAD_CALL_QUALITY || issue.value == Intro.DROP_CALLS ){
 			if (Main.HISTORY.isClassInteractionInHistory(WhereAreU, Yes))
 			{
 				/******** CH *********/
@@ -63,6 +66,15 @@ class HowIsCoverage extends Triplet
 			else {
 				_NoImpactOnPartnersNetworkQuality;
 			}
+		}
+		else if (issue.value == Intro.SLOW_INTERNET){
+			IsOldSim;
+		}
+		else{
+			/**
+			 * NO INTERENET
+			 */
+			HadDataBefore;
 		}
 	}
 }

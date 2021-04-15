@@ -1,0 +1,15 @@
+FLAG	DETAILS	TITLE	ILLUSTRATION	RIGHT-BTN	LEFT-BTN	MID-BTN	QOOK
+$calls.numbers.CouldItBeYouWereBlocked	<em>Be very careful when you formulate this as the person may be offended (ex. partner or family member).	Is there a possibility that the person may have blocked your number?
+$calls.numbers._IfOtherTooThan	If other people cannot reach this number, it is not a problem related to this contract.	In this case the problem is with the number you have dialled.
+$calls.numbers.HowManyNumberAffected		Do you experience this problem with several numbers or just one?		Just one	All
+$calls.numbers.HowLongDoYouStayAbroad		How much longer will you stay abroad?		7 days or longer	less than 7 days
+$calls.numbers._EnsureNumbersAreDiledCorrectly	Check with the customer that there is no missing digit and that the country prefix is <em>correctly entered <em>.<N> Particularly when in roaming. 	Could it be a mistyping of the-numbers?
+$calls.numbers.WhatBound		Is the fault for incoming or outgoing calls?		Outgoing	Incoming	Both
+$calls.HowManyCallFail		Out of 10 calls, how many are problematic?		less than 4	4 or more
+$calls._InformOnIssueFactors	<b>Inside the building<b><N><N><T>- Design and construction<N><T>- Thick walls<N><T>- Isolation<N><T>- Materials used<N><T>- Electronic devices in household/offices<N><N><b>Outdoors<b><N><T>- Geographical and architectural features (hills/mountains, valleys, forests; buildings) <N><N><b>Time factors<b><N><T>During peak periods, a much larger number of users are connected to the antenna and put pressure on the network capacity (voice and data).	Do you know all the factors that can impact the radio signal?
+$calls.WhereExactlyDoesITHappen		Where do you experience these quality concerns or interrupted calls?		Everywhere	Only here
+$calls.HasEnoughBalance	A minimum balance is required to guarantee that calls will be carried out successfully.	Is the balance on your card at least CHF <AMOUNT>.-?		Yes	No, please recharge.
+$calls.TypeOfSubscription		Subscription or PrePay 		Subcription	Prepay
+$calls._NoImpactOnPartnersNetworkQuality		Unfortunately, we have no control over the quality of our partner's network.		No ticket creation possible
+$coverage.HowIsTheCoverage	<T>- <b>Good<b>: 3 or more bars<N><T>-<b>Bad<b>: less than 3 bars<N><T>- <b>Null<b>: No bars and no provider (emergency call only)	How is the coverage?		Good	Bad	Null	https://qoom.salt.ch/productservices/telephony/mobile_internet-networks_technologies_and_units_of_measurement
+$flow.TutoTree			ui/tutoKeyboardFR
