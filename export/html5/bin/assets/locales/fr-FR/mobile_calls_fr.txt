@@ -13,3 +13,8 @@ $calls.TypeOfSubscription		Souscription Post ou Prepay		Postpay	Prepay
 $calls._NoImpactOnPartnersNetworkQuality		Nous n'avons malheureusement aucune possibilité d'action sur la qualité du réseau de notre partenaire.		Pas de ticket possible
 $coverage.HowIsTheCoverage	<T>- <b>Bonne<b> : 3 barres ou plus<N><T>-<b>Mauvaise<b> : moins de 3 barres<N><T>- <b>Nulle<b> : pas de barres et pas de fournisseur ("appels d'urgence uniquement")	Comment est la couverture ?		Bonne	Mauvaise	Nulle	https://qoom.salt.ch/productservices/telephony/mobile_internet-networks_technologies_and_units_of_measurement
 $flow.TutoTree			ui/tutoKeyboardFR
+$calls.ref600._ExplainWhyREF600	J'explique la problématique(ref600)	C'est un problème hors de notre contrôle<N> dû à des intermédiaires de nos partenaires l'étranger					https://qoom.salt.ch/fr/bug/services/international_calls_with_a_number_other_than_the_customers_number
+$calls.ref600.WasHideCallActivated	Si oui alors changeons le !	Ce peut-il que votre téléphone ait un réglage de numéro masqué ?	
+$calls.intl.SingleOrAll		Est-ce le cas pour un seul, ou pour tous les appels ?	
+$calls.intl.CanBeReachedByOtherSalt		Est-ce-qu'à votre connaissance un autre client Salt a pu joindre ce(s) numéro(s)			n'en sait rien
+$calls._InputExamples	Saisir des examples (datant de moins de 72heures). Sans exemple concret aucune suite pourra être donnée.<N>Codes pays +33 ou 0033<N>num tél avec ou sans (0)<N>dates : <N><T>01.01.2021<N><T>01/01/2021 21:30<N>heures et minutes : <N><T>21h30<N><T>21h 30<N><T>21:30	Pourriez-vous donner au moins un exemple afin de le(s) transmettre à technicien pour analyse ?	

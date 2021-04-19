@@ -1,4 +1,4 @@
-package capture;
+package data;
 
 import coverage.HowIsCoverage;
 import tstool.process.Descision;

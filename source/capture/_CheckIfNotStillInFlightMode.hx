@@ -1,5 +1,6 @@
 package capture;
 
+import data.RestartRequestedFromSalt;
 import tstool.layout.History.ValueReturn;
 import tstool.process.Action;
 import tstool.process.Process;

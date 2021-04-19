@@ -10,10 +10,10 @@ import tstool.process.Process;
 class _SinceWhen extends ActionRadios 
 {
 	static inline var SinceWhen:String = "SinceWhen";
-	static inline var HOURS:String = "couple of hours";
-	static inline var DAYS:String = "couple of days";
-	static inline var WEEK:String = "more than a week";
-	static inline var FOR_EVER:String = "forever";
+	static inline var HOURS:String = "CoupleofHours";
+	static inline var DAYS:String = "CoupleofDays";
+	static inline var WEEK:String = "MoreThanWeek";
+	static inline var FOR_EVER:String = "Forever";
 
 	public function new() 
 	{

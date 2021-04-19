@@ -8,3 +8,29 @@ $calls.numbers.HowManyNumberAffectedSinglenumber	Numéro posant problème
 $capture.IsTicketOpened	Numéro posant problème
 $capture.IsTicketOpenedSOticket	N° ticket S.O.
 $capture.IsTicketOpenedMSISDN	MSISDN
+$IntroIssue	Problème
+$IntroNoCalls	Peux pas faire ou recevoir des appels
+$IntroBadCalls	Mauvaise qualité des appels
+$IntroDropCalls	Appels interrompus ou coupés
+$IntroNoInternet	Pas d'internet/data
+$IntroSlowInternet	Internet/data est lent
+$IntroNoIntlCalls	Peux pas faire des appels vers l'étranger
+$IntroNumberWronglyDisplayedAbroad	Mon numéro ne s'affiche pas correctemetn quand je suis à l'étranger
+$calls._InputExamplesExpl_I_CountryCode	Expl.1 code pays
+$calls._InputExamplesExpl_II_CountryCode	Expl.2 code pays
+$calls._InputExamplesExpl_III_CountryCode	Expl.3 code pays
+$calls._InputExamplesExpl_I_PhoneNber	Expl.1 Num tél
+$calls._InputExamplesExpl_II_PhoneNber	Expl.2 Num tél
+$calls._InputExamplesExpl_III_PhoneNber	Expl.3 Num tél
+$calls._InputExamplesExpl_I_Date	Expl.1 Date
+$calls._InputExamplesExpl_II_Date	Expl.2 Date
+$calls._InputExamplesExpl_III_Date	Expl.3 Date
+$calls._InputExamplesExpl_I_Time	Expl.1 heure minutes
+$calls._InputExamplesExpl_II_Time	Expl.2 heure minutes
+$calls._InputExamplesExpl_III_Time	Expl.3 heure minutes
+$capture._SinceWhenSinceWhen	à peu près:
+$capture._SinceWhenCoupleofHours	Quelques heures
+$capture._SinceWhenCoupleofDays	Quelques jours
+$capture._SinceWhenMoreThanWeek	Plus d'une semaine
+$capture._SinceWhenForever	Depuis longtemps
+$capture._WhichCountryCountry	Pays

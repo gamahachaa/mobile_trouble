@@ -1,6 +1,7 @@
-package coverage;
+package data;
 
 import capture.WhereAreU;
+import data._ActiveMobileData;
 import tstool.process.Descision;
 import tstool.process.Process;
 
@@ -23,6 +24,6 @@ class HadDataBefore extends Descision
 	}
 	inline function next():Class<Process>
 	{
-		return ActiveMobileData;
+		return _ActiveMobileData;
 	}
 }

@@ -20,9 +20,12 @@ class _InputExamples extends ActionMultipleInput
 	static inline var Expl_I_PhoneNber:String = "Expl_I_PhoneNber";
 	static inline var Expl_II_PhoneNber:String = "Expl_II_PhoneNber";
 	static inline var Expl_III_PhoneNber:String = "Expl_III_PhoneNber";
-	static inline var Expl_I_DateTime:String = "Expl_I_DateTime";
-	static inline var Expl_II_DateTime:String = "Expl_II_DateTime";
-	static inline var Expl_III_DateTime:String = "Expl_III_DateTime";
+	static inline var Expl_I_Date:String = "Expl_I_Date";
+	static inline var Expl_II_Date:String = "Expl_II_Date";
+	static inline var Expl_III_Date:String = "Expl_III_Date";
+	static inline var Expl_I_Time:String = "Expl_I_Time";
+	static inline var Expl_II_Time:String = "Expl_II_Time";
+	static inline var Expl_III_Time:String = "Expl_III_Time";
 	var next:ProcessContructor;
 
 	public function new (next:ProcessContructor)
@@ -42,7 +45,7 @@ class _InputExamples extends ActionMultipleInput
 		{
 			ereg: new EReg(ExpReg.INTL_NUMBER,"i"),
 			input:{
-				width:250,
+				width:180,
 				buddy: Expl_I_CountryCode,
 				prefix:Expl_I_PhoneNber,
 				position: [top, right],
@@ -51,13 +54,24 @@ class _InputExamples extends ActionMultipleInput
 			}
 		},
 		{
-			ereg: new EReg(ExpReg.DATE_TIME,"i"),
+			ereg: new EReg(ExpReg.DATE_REG,"i"),
 			input:{
-				width:250,
+				width:160,
 				buddy: Expl_I_PhoneNber,
-				prefix : Expl_I_DateTime,
+				prefix : Expl_I_Date,
 				position: [top, right],
 				debug: "01.01.2021",
+				mustValidate: [Next]
+			}
+		},
+		{
+			ereg: new EReg(ExpReg.TIME,"i"),
+			input:{
+				width:200,
+				buddy: Expl_I_Date,
+				prefix : Expl_I_Time,
+				position: [top, right],
+				debug: "21h30",
 				mustValidate: [Next]
 			}
 		}
@@ -78,7 +92,7 @@ class _InputExamples extends ActionMultipleInput
 			{
 				ereg: new EReg(ExpReg.INTL_NUMBER,"i"),
 				input:{
-					width:250,
+					width:180,
 					buddy: Expl_I_PhoneNber,
 					prefix:Expl_II_PhoneNber,
 					position: [bottom, left],
@@ -86,12 +100,22 @@ class _InputExamples extends ActionMultipleInput
 				}
 			},
 			{
-				ereg: new EReg(ExpReg.DATE_TIME,"i"),
+				ereg: new EReg(ExpReg.DATE_REG,"i"),
 				input:{
-					width:250,
-					buddy: Expl_I_DateTime,
-					prefix : Expl_II_DateTime,
-					position: [bottom, left],
+					width:160,
+					buddy: Expl_II_PhoneNber,
+					prefix : Expl_II_Date,
+					position: [top, right],
+					mustValidate: [Exit]
+				}
+			},
+			{
+				ereg: new EReg(ExpReg.TIME,"i"),
+				input:{
+					width:200,
+					buddy: Expl_II_Date,
+					prefix : Expl_II_Time,
+					position: [top, right],
 					mustValidate: [Exit]
 				}
 			},
@@ -108,7 +132,7 @@ class _InputExamples extends ActionMultipleInput
 			{
 				ereg: new EReg(ExpReg.INTL_NUMBER,"i"),
 				input:{
-					width:250,
+					width:180,
 					buddy: Expl_II_PhoneNber,
 					prefix:Expl_III_PhoneNber,
 					position: [bottom, left],
@@ -116,12 +140,22 @@ class _InputExamples extends ActionMultipleInput
 				}
 			},
 			{
-				ereg: new EReg(ExpReg.DATE_TIME,"i"),
+				ereg: new EReg(ExpReg.DATE_REG,"i"),
 				input:{
-					width:250,
-					buddy: Expl_II_DateTime,
-					prefix : Expl_III_DateTime,
-					position: [bottom, left],
+					width:160,
+					buddy: Expl_III_PhoneNber,
+					prefix : Expl_III_Date,
+					position: [top, right],
+					mustValidate: [Exit]
+				}
+			},
+			{
+				ereg: new EReg(ExpReg.TIME,"i"),
+				input:{
+					width:200,
+					buddy: Expl_III_Date,
+					prefix : Expl_III_Time,
+					position: [top, right],
 					mustValidate: [Exit]
 				}
 			}]);

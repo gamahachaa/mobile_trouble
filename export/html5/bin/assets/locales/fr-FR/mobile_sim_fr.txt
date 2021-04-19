@@ -3,3 +3,7 @@ $sim.CanSwapSimInOtherDevice		Pourriez-vous essayer d'insérer votre carte SIM d
 $sim._OrderNeewOneForFree		Je vais vous faire envoyer une nouvelle carte SIM gratuitement.
 $sim.IsOldSim	Changer la SIM si :<N><T>- elle a plus de 4 ans.<N><T>- elle a été découpée pour entrer dans un slot nano. 	Je regarde si votre carte SIM est recente,<N> elle a été découpée ?		Vielle (+4ans) ou découpée	Récente		https://qoom.salt.ch/customer-process/use_trouble/order-swapsim/changing_the_sim_card_sim_swap
 $flow.TutoTree			ui/tutoKeyboardFR
+$sim._FollowRepairProcess		Nous allons appliquer la procédure de réparation.					https://qoom.salt.ch/productservices/support/repair-overview_general_information_and_faqs_before_repair
+$sim._HowAboutASpecialOffer		Que direz-vous d'un renouvellement de contrat pour pouvoir bénéficier d'un appareil dernier cri ?
+$sim._IssueIsWithTheDevice		C'est très vraisemblablement un souci avec votre appareil.
+$sim.IsDeviceUnderWaranty		Est-ce que votre appareil est encore sou garantie ?

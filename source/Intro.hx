@@ -35,6 +35,7 @@ class Intro extends ActionRadios
 		[
 			{
 				title: ISSUE,
+				hasTranslation:true,
 				values: [NO_CALLS, BAD_CALL_QUALITY, DROP_CALLS, NO_INTERNET, SLOW_INTERNET, NO_INTL_CALLS, REF_600]
 			}
 		]
