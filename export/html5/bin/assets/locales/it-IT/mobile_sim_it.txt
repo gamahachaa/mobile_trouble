@@ -1,5 +1,0 @@
-FLAG	DETAILS	TITLE	ILLUSTRATION	RIGHT-BTN	LEFT-BTN	MID-BTN	QOOK
-$sim.CanSwapSimInOtherDevice		Potrebbe provare a inserire la sua scheda SIM in un altro dispositivo? <N>Il problema si risolve?		Sì	No, non si risolve	Non posso provare in un altro dispositivo
-$sim._OrderNeewOneForFree		Le invierò una nuova scheda SIM gratuitamente.
-$sim.IsOldSim	Cambiare la SIM se :N><N><T>- ha più di 4 anni.<N><T>- È stata tagliata per inserirsi in uno slot nano. 	Controllo se la sua scheda SIM è recente,<N>È stata tagliata?		Vecchia (+4 anni) o tagliata	Recente		https://qoom.salt.ch/customer-process/use_trouble/order-swapsim/changing_the_sim_card_sim_swap
-$flow.TutoTree			ui/tutoKeyboardFR
