@@ -39,8 +39,8 @@ class _WhichCountry extends ActionMultipleInput
 	}
 	inline function getNext():Class<Process>
 	{
-		var issue:ValueReturn = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
-		return issue.value == Intro.REF_600? WasHideCallActivated:_SinceWhen;
+		//var issue:ValueReturn = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
+		return _SinceWhen;
 	}
 	/****************************
 	* Needed only for validation

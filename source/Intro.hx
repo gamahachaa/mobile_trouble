@@ -45,7 +45,8 @@ class Intro extends ActionRadios
 	override public function onClick():Void
 	{
 		this._nexts = [{step:  getNext(), params: []}];
-		super.onClick();
+		if(validate())
+			super.onClick();
 	}
 	inline function getNext():Class<Process>{
 		return IsTicketOpened;

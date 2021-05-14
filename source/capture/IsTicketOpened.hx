@@ -15,6 +15,7 @@ class IsTicketOpened extends DescisionMultipleInput
 {
 	static inline var MSISDN:String = "MSISDN";
 	static inline var SO_TICKET:String = "SO ticket";
+	var issue:ValueReturn;
 	public function new ()
 	{
 		super(
@@ -41,6 +42,11 @@ class IsTicketOpened extends DescisionMultipleInput
 		]
 		);
 		Process.STORAGE = [];
+	}
+	override public function create()
+	{
+		issue = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
+		super.create();
 	}
 	/****************************
 	* Needed for validation
@@ -69,9 +75,17 @@ class IsTicketOpened extends DescisionMultipleInput
 	override public function validate(interaction:Interactions):Bool
 	{
 		//trace("capture.IsCompTicketOpened::validate");
+		
 		Main.customer.voIP = StringTools.replace(this.multipleInputs.inputs.get(MSISDN).getInputedText(), " ", "");
 		Main.customer.iri = Main.customer.voIP;
-
+		
+		Main.track.setVerb("initialized");
+		Main.track.setStatementRef(null);
+		Main.track.setCustomer(true);
+		Main.track.setActivity( issue.value );
+        Main.track.send();
+		Main.track.setVerb("resolved");
+		
 		Process.STORE(MSISDN, '${Main.customer.voIP}' );
 		return super.validate(interaction);
 	}
@@ -81,10 +95,11 @@ class IsTicketOpened extends DescisionMultipleInput
 	}*/
 	inline function next():Class<Process>
 	{
-		var issue:ValueReturn = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
+		
 		return switch (issue.value)
 		{
 			case Intro.NO_INTL_CALLS: IsInCollection;
+			case Intro.REF_600:  WasHideCallActivated;
 			case _ : WhereAreU;
 		}
 	}

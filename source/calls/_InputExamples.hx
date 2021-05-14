@@ -27,6 +27,7 @@ class _InputExamples extends ActionMultipleInput
 	static inline var Expl_II_Time:String = "Expl_II_Time";
 	static inline var Expl_III_Time:String = "Expl_III_Time";
 	var next:ProcessContructor;
+	var nextStep:ProcessContructor;
 
 	public function new (next:ProcessContructor)
 	{
@@ -164,16 +165,23 @@ class _InputExamples extends ActionMultipleInput
 		this.next = next;
 
 	}
-
+    override public function create()
+	{
+		super.create();
+		nextStep = this.next;
+	}
 	override public function onClick():Void
 	{
 		if (validate(Next))
 		{
-			this._nexts = [ {step: next.step, params: next.params}];
+			this._nexts = [ {step: nextStep.step, params: nextStep.params}];
 			super.onClick();
 		}
 	}
-
+    override function pushToHistory(buttonTxt:String, interactionType:Interactions,?values:Map<String,Dynamic>=null):Void
+	{
+		Main.HISTORY.add({step:this._class, params: _nexts }, interactionType, _titleTxt, buttonTxt, [for (k=>v in multipleInputs.inputs) k => v.getInputedText()]);
+	}
 	/****************************
 	* Needed only for validation
 	*****************************/
