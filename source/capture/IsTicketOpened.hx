@@ -2,10 +2,13 @@ package capture;
 
 import barrings.IsInCollection;
 import calls.ref600.WasHideCallActivated;
+import tstool.MainApp;
 import tstool.layout.History.Interactions;
 import tstool.layout.History.ValueReturn;
 import tstool.process.DescisionMultipleInput;
 import tstool.process.Process;
+import xapi.Agent;
+import xapi.Verb;
 
 /**
  * ...
@@ -29,7 +32,7 @@ class IsTicketOpened extends DescisionMultipleInput
 			}
 		},
 		{
-			ereg: new EReg("^(11)[0-9]{6}$","i"),
+			ereg: new EReg("^(1)[0-9]{7}$","i"),
 			input:{
 				width:100,
 				prefix:SO_TICKET,
@@ -45,6 +48,9 @@ class IsTicketOpened extends DescisionMultipleInput
 	}
 	override public function create()
 	{
+		#if debug
+		trace('Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT)', Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT));
+		#end
 		issue = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
 		super.create();
 	}
@@ -78,14 +84,27 @@ class IsTicketOpened extends DescisionMultipleInput
 		
 		Main.customer.voIP = StringTools.replace(this.multipleInputs.inputs.get(MSISDN).getInputedText(), " ", "");
 		Main.customer.iri = Main.customer.voIP;
-		
+		#if debug
+				Main.trackH.reset(false);
+				Main.trackH.setActor(new Agent( MainApp.agent.iri, MainApp.agent.sAMAccountName));
+				Main.trackH.setVerb(Verb.initialized);
+				//Main.trackH.setStatementRefs(null);
+				var extensions:Map<String,Dynamic> = [];
+				extensions.set("https://customercare.salt.ch/admin/contracts/customer/", Main.customer.contract.contractorID); 
+				
+				
+				Main.trackH.setActivityObject(issue.value,null,null,"http://activitystrea.ms/schema/1.0/process",extensions);
+				//Main.trackH.setCustomer();
+				Main.trackH.send();
+				Main.trackH.setVerb(Verb.resolved);
+			#else
 		Main.track.setVerb("initialized");
 		Main.track.setStatementRef(null);
 		Main.track.setCustomer(true);
 		Main.track.setActivity( issue.value );
         Main.track.send();
 		Main.track.setVerb("resolved");
-		
+		#end
 		Process.STORE(MSISDN, '${Main.customer.voIP}' );
 		return super.validate(interaction);
 	}

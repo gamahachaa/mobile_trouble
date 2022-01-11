@@ -1,10 +1,15 @@
 package;
 
+
+
 import coverage.gis._CheckNetWork;
 import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.FlxState;
 import flixel.input.keyboard.FlxKey;
+import tstool.utils.XapiHelper;
+
+import lime.utils.Assets;
 import tstool.layout.UI;
 import tstool.process.Process;
 //import flixel.system.FlxAssets;
@@ -23,7 +28,7 @@ import tstool.layout.Login;
 //import tstool.layout.SaltColor;
 import tstool.salt.Agent;
 import tstool.salt.Customer;
-import tstool.utils.Csv;
+//import tstool.utils.Csv;
 import tstool.utils.Translator;
 import tstool.utils.VersionTracker;
 import tstool.utils.XapiTracker;
@@ -36,7 +41,7 @@ import tstool.utils.XapiTracker;
 
 class Main extends MainApp
 {
-	public static var LIB_FOLDER:String;
+	//public static var LIB_FOLDER:String;
 	//public static var MAIL_WRAPPER_URL:String = LIB_FOLDER + "php/mail/index.php";
 	
 	public static var HISTORY:History;
@@ -44,7 +49,12 @@ class Main extends MainApp
 	public static var tongue:Translator;
 	public static var user:Agent;
 	public static var customer:Customer;
+	//public static var track:XapiTracker;
+	#if debug
+	public static var trackH:XapiHelper;
+	#else
 	public static var track:XapiTracker;
+	#end
 	public static var VERSION:String;
 	public static var VERSION_TRACKER:VersionTracker;
 	public static var LOCATION:Location;
@@ -65,20 +75,27 @@ class Main extends MainApp
 	{
 		super({
 				cookie:"mobile_trouble_20210205.user",
-				scriptName:"mobile_trouble"
+				scriptName:"mobile_trouble",
+				libFolder: LIB_FOLDER_LOGIN
 				
 		});
-		LIB_FOLDER = "../trouble/";
+		//LIB_FOLDER = "../trouble/";
 		tongue = MainApp.translator;
 		//COOKIE = MainApp.save;
 		HISTORY = MainApp.stack;
 		LOCATION = MainApp.location;
+		//track =  MainApp.xapiTracker;
+		#if debug
+		trackH =  MainApp.xapiHelper;
+		#else
 		track =  MainApp.xapiTracker;
+		#end
 		DEBUG = MainApp.debug;
 		DEBUG_LEVEL = 1;
 		VERSION_TRACKER = MainApp.versionTracker;
 		customer = MainApp.cust;
 		addChild(new FlxGame(1400, 880, Login, 1, 30, 30, true, true));
+		
 
 	}
 	

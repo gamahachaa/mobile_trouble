@@ -1,5 +1,6 @@
 package coverage.gis;
 
+import firetongue.Replace;
 import tstool.process.Descision;
 
 /**
@@ -8,11 +9,26 @@ import tstool.process.Descision;
  */
 class CheckIfCloseToBlackCell extends Descision 
 {
-
-	public function new() 
+    override public function create()
 	{
-		super();
+		var blackCells = Main.HISTORY.findValueOfFirstClassInHistory(IsGisFailure, IsGisFailure.BLACK_CELLS).value.split(";"); 
+		super.create();
+		var site = getSites(blackCells);
+		title = Replace.flags(_detailTxt, ["SITES"], []);
+		//this.details.
+	}
+	override public function onYesClick():Void
+	{
+		this._nexts = [{step: IsQoomMajorIncident, params: []}];
+		super.onYesClick();
+	}
+	override public function onNoClick():Void
+	{
+		this._nexts = [{step: IsQoomMajorIncident, params: []}];
+		super.onNoClick();
+	}
+	function getSites(t:Array<String>)
+	{
 		
 	}
-	
 }

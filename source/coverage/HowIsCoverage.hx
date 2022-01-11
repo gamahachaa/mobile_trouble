@@ -29,7 +29,7 @@ class HowIsCoverage extends Triplet
 	override public function onNoClick():Void
 	{
 		
-		this._nexts = [{step: goNextNo(InsideOrOutside), params: []}];
+		this._nexts = [{step: goNextNo(_SelectManuallyAnotherProvider), params: []}];
 		super.onNoClick();
 	}
 	
@@ -58,7 +58,8 @@ class HowIsCoverage extends Triplet
 			/******** NO calls at all *********/
 			TypeOfSubscription;
 		}
-		else if (issue.value == Intro.BAD_CALL_QUALITY || issue.value == Intro.DROP_CALLS ){
+		//else if (issue.value == Intro.BAD_CALL_QUALITY || issue.value == Intro.DROP_CALLS ){
+		else if (issue.value == Intro.BAD_CALL_QUALITY ){
 			if (Main.HISTORY.isClassInteractionInHistory(WhereAreU, Yes))
 			{
 				/******** CH *********/

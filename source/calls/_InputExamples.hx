@@ -168,13 +168,13 @@ class _InputExamples extends ActionMultipleInput
     override public function create()
 	{
 		super.create();
-		nextStep = this.next;
+		//nextStep = this.next;
 	}
 	override public function onClick():Void
 	{
 		if (validate(Next))
 		{
-			this._nexts = [ {step: nextStep.step, params: nextStep.params}];
+			this._nexts = [ {step: this.next.step, params: this.next.params}];
 			super.onClick();
 		}
 	}

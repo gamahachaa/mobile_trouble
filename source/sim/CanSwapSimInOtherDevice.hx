@@ -56,7 +56,8 @@ class CanSwapSimInOtherDevice extends Triplet
 				_ThreeOneTwo;
 			}
 		}
-		else if (issue.value == Intro.BAD_CALL_QUALITY || issue.value == Intro.DROP_CALLS)
+		//else if (issue.value == Intro.BAD_CALL_QUALITY || issue.value == Intro.DROP_CALLS)
+		else if (issue.value == Intro.BAD_CALL_QUALITY)
 		{
 			_ThreeTwoOne;
 		}

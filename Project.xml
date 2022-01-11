@@ -39,6 +39,9 @@
 	<haxelib name="flixel" />
 	<haxelib name="flixel-addons" />
 	<haxelib name="flixel-ui" />
+	<haxelib name="signals" />
+	<haxelib name="xapi" />
+	<haxelib name="thx.core" />
 
 	<haxelib name="firetongue" />
 	<haxelib name="hscript" />

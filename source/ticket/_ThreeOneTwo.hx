@@ -12,7 +12,11 @@ class _ThreeOneTwo extends ActionTicket
 
 	public function new() 
 	{
-		super(SOTickets.MOBILE_312);
+		
+		var ticket:SOTickets =  SOTickets.MOBILE_312;
+		if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.SOHO)
+			ticket.queue = Intro.SOHO_QUEUE;
+		super(ticket);
 	}
 	override public function onClick():Void
 	{

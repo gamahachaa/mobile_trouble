@@ -2,6 +2,7 @@ package coverage.gis;
 
 //import tstool.process.Action;
 import tstool.process.ActionMultipleInput;
+import tstool.process.Process;
 import tstool.utils.ExpReg;
 
 /**
@@ -10,10 +11,10 @@ import tstool.utils.ExpReg;
  */
 class _CheckNetWork extends ActionMultipleInput 
 {
-	static inline var STREET:String = "Street";
-	static inline var NUMBER:String = "Nber";
-	static inline var ZIP:String = "Zip";
-	static inline var CITY:String = "City";
+	public static inline var STREET:String = "Street";
+	public static inline var NUMBER:String = "Nber";
+	public static inline var ZIP:String = "Zip";
+	public static inline var CITY:String = "City";
 
 	public function new ()
 	{
@@ -71,6 +72,7 @@ class _CheckNetWork extends ActionMultipleInput
 			super.onClick();
 		}
 	}
+	
 	
 	/****************************
 	* Needed only for validation
