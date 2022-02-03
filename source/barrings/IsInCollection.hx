@@ -1,5 +1,6 @@
 package barrings;
 
+import flixel.FlxG;
 import tstool.process.Descision;
 
 /**
@@ -18,4 +19,5 @@ class IsInCollection extends Descision
 		this._nexts = [{step: ArethereAnyBarrings, params: []}];
 		super.onNoClick();
 	}
+	
 }

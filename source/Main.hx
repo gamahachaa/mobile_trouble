@@ -50,11 +50,11 @@ class Main extends MainApp
 	public static var user:Agent;
 	public static var customer:Customer;
 	//public static var track:XapiTracker;
-	#if debug
+	//#if debug
 	public static var trackH:XapiHelper;
-	#else
-	public static var track:XapiTracker;
-	#end
+	//#else
+	//public static var track:XapiTracker;
+	//#end
 	public static var VERSION:String;
 	public static var VERSION_TRACKER:VersionTracker;
 	public static var LOCATION:Location;
@@ -85,11 +85,11 @@ class Main extends MainApp
 		HISTORY = MainApp.stack;
 		LOCATION = MainApp.location;
 		//track =  MainApp.xapiTracker;
-		#if debug
+		//#if debug
 		trackH =  MainApp.xapiHelper;
-		#else
-		track =  MainApp.xapiTracker;
-		#end
+		//#else
+		//track =  MainApp.xapiTracker;
+		//#end
 		DEBUG = MainApp.debug;
 		DEBUG_LEVEL = 1;
 		VERSION_TRACKER = MainApp.versionTracker;
@@ -110,9 +110,9 @@ class Main extends MainApp
 		var next:Process = new Intro();
 		var tuto:Process = new Tuto();
 		setUpSystemDefault(true);
-		#if !debug
-		Main.track.setActor();
-		#end
+		//#if !debug
+		//Main.track.setActor();
+		//#end
 		#if debug
 			/**
 			 * USe this  to debug a slide

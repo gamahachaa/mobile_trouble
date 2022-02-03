@@ -1,7 +1,7 @@
 package capture;
 
-import data.RestartRequestedFromSalt;
-import tstool.layout.History.ValueReturn;
+//import data.RestartRequestedFromSalt;
+//import tstool.layout.History.ValueReturn;
 import tstool.process.Action;
 import tstool.process.Process;
 
@@ -19,15 +19,16 @@ class _CheckIfNotStillInFlightMode extends Action
 		super.onClick();
 	}
 	inline function getNext():Class<Process>{
-		var issue:ValueReturn = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
-		//#if debug
-		//trace("capture._CheckIfNotStillInFlightMode::getNext::issue", issue );
-		//#end
-		return switch (issue.value)
-		{
-			case Intro.SLOW_INTERNET: RestartRequestedFromSalt;
-			case Intro.NO_INTERNET: RestartRequestedFromSalt;
-			case _ :DeviceRestart;
-		}
+		//var issue:ValueReturn = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
+		////#if debug
+		////trace("capture._CheckIfNotStillInFlightMode::getNext::issue", issue );
+		////#end
+		//return switch (issue.value)
+		//{
+			//case Intro.SLOW_INTERNET: RestartRequestedFromSalt;
+			//case Intro.NO_INTERNET: RestartRequestedFromSalt;
+			//case _ :DeviceRestart;
+		//}
+		return _CheckDoNotDisturb;
 	}
 }

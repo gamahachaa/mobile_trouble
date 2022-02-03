@@ -1,12 +1,14 @@
 package coverage;
 
-import barrings.IsInCollection;
+//import barrings.IsInCollection;
+import calls.IsVoLTEActiv;
 import calls.TypeOfSubscription;
 import calls.WhereExactlyDoesITHappen;
 import calls._NoImpactOnPartnersNetworkQuality;
 import capture.WhereAreU;
 import coverage.gis._CheckNetWork;
 import data.HadDataBefore;
+import sim.CanSwapSimInOtherDevice;
 import sim.IsOldSim;
 import tstool.layout.History.ValueReturn;
 import tstool.process.Process;
@@ -60,17 +62,23 @@ class HowIsCoverage extends Triplet
 		}
 		//else if (issue.value == Intro.BAD_CALL_QUALITY || issue.value == Intro.DROP_CALLS ){
 		else if (issue.value == Intro.BAD_CALL_QUALITY ){
-			if (Main.HISTORY.isClassInteractionInHistory(WhereAreU, Yes))
+			
+			IsVoLTEActiv;
+			/*if (Main.HISTORY.isClassInteractionInHistory(WhereAreU, Yes))
 			{
-				/******** CH *********/
+				// CH
 				WhereExactlyDoesITHappen;
 			}
 			else {
 				_NoImpactOnPartnersNetworkQuality;
 			}
+			*/
 		}
 		else if (issue.value == Intro.SLOW_INTERNET){
-			IsOldSim;
+			if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.GOMO)
+				CanSwapSimInOtherDevice;
+			else
+				IsOldSim;
 		}
 		else{
 			/**

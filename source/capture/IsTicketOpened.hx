@@ -1,5 +1,6 @@
 package capture;
 
+import barrings.ArethereAnyBarrings;
 import barrings.IsInCollection;
 import calls.ref600.WasHideCallActivated;
 import tstool.MainApp;
@@ -84,27 +85,27 @@ class IsTicketOpened extends DescisionMultipleInput
 		
 		Main.customer.voIP = StringTools.replace(this.multipleInputs.inputs.get(MSISDN).getInputedText(), " ", "");
 		Main.customer.iri = Main.customer.voIP;
-		#if debug
+		//#if debug
 				Main.trackH.reset(false);
 				Main.trackH.setActor(new Agent( MainApp.agent.iri, MainApp.agent.sAMAccountName));
 				Main.trackH.setVerb(Verb.initialized);
 				//Main.trackH.setStatementRefs(null);
 				var extensions:Map<String,Dynamic> = [];
-				extensions.set("https://customercare.salt.ch/admin/contracts/customer/", Main.customer.contract.contractorID); 
+				extensions.set("https://customercare.salt.ch/admin/contracts/customer/", Main.customer.voIP); 
 				
 				
 				Main.trackH.setActivityObject(issue.value,null,null,"http://activitystrea.ms/schema/1.0/process",extensions);
 				//Main.trackH.setCustomer();
 				Main.trackH.send();
 				Main.trackH.setVerb(Verb.resolved);
-			#else
-		Main.track.setVerb("initialized");
-		Main.track.setStatementRef(null);
-		Main.track.setCustomer(true);
-		Main.track.setActivity( issue.value );
-        Main.track.send();
-		Main.track.setVerb("resolved");
-		#end
+			//#else
+		//Main.track.setVerb("initialized");
+		//Main.track.setStatementRef(null);
+		//Main.track.setCustomer(true);
+		//Main.track.setActivity( issue.value );
+        //Main.track.send();
+		//Main.track.setVerb("resolved");
+		//#end
 		Process.STORE(MSISDN, '${Main.customer.voIP}' );
 		return super.validate(interaction);
 	}
@@ -117,7 +118,7 @@ class IsTicketOpened extends DescisionMultipleInput
 		
 		return switch (issue.value)
 		{
-			case Intro.NO_INTL_CALLS: IsInCollection;
+			case Intro.NO_INTL_CALLS: if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.GOMO) ArethereAnyBarrings else IsInCollection;
 			case Intro.REF_600:  WasHideCallActivated;
 			case _ : WhereAreU;
 		}

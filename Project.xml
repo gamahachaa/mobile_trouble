@@ -44,6 +44,7 @@
 	<haxelib name="thx.core" />
 
 	<haxelib name="firetongue" />
+	<haxelib name="markdown" />
 	<haxelib name="hscript" />
 	<haxelib name="tstool" />
 	<haxelib name="uglifyjs" unless="debug"/>
@@ -118,4 +119,5 @@
 	<!-- _________________________________ Custom _______________________________ -->
 	
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
+		<haxeflag name = "--macro" value="tstool.macros.TranslationVerificator.test()"/>
 </project>

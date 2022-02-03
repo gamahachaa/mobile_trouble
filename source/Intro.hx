@@ -4,8 +4,9 @@ import capture.IsTicketOpened;
 import capture.WhereAreU;
 import js.Browser;
 import tstool.layout.UI;
-import tstool.process.ActionRadios;
-import tstool.process.DescisionRadios;
+//import tstool.process.ActionRadios;
+//import tstool.process.DescisionRadios;
+import tstool.process.TripletRadios;
 //import js.Browser;
 import tstool.MainApp;
 //import tstool.layout.UI;
@@ -20,11 +21,12 @@ import tstool.process.Triplet;
  * @author bb
  */
 //class Intro extends ActionRadios
-class Intro extends DescisionRadios
+class Intro extends TripletRadios
 {
 	public static inline var SEGMENT:String = "SEGMENT";
 	public static inline var PRICE_PLAN:String = "PP";
 	public static inline var B2C:String = "B2C";
+	public static inline var GOMO:String = "GoMo";
 	public static inline var PORTFOLIO:String = "PORTFOLIO";
 	public static inline var SOHO:String = "SOHO";
 	public static inline var ISSUE:String = "Issue";
@@ -36,6 +38,7 @@ class Intro extends DescisionRadios
 	public static inline var NO_INTL_CALLS:String = "NoIntlCalls";
 	
 	public static inline var SOHO_QUEUE:String = "B2B_SOHO_TECH_SO";
+	public static inline var GOMO_QUEUE:String = "GOMO_TECH_SO";
 	
 	public static inline var REF_600:String = "NumberWronglyDisplayedAbroad";
 
@@ -59,6 +62,13 @@ class Intro extends DescisionRadios
 		//if(validate())
 			//super.onClick();
 	//}
+	override public function onMidClick():Void
+	{
+		Main.customer.dataSet.set(PORTFOLIO, [SEGMENT => GOMO]);
+		this._nexts = [{step:  getNext(), params: []}];
+		if(validate())
+			super.onMidClick();
+	}
 	override public function onYesClick():Void
 	{
 		Main.customer.dataSet.set(PORTFOLIO, [SEGMENT => B2C]);

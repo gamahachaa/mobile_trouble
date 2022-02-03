@@ -1,6 +1,7 @@
 package calls.numbers;
 
 import capture.WhereAreU;
+import sim.CanSwapSimInOtherDevice;
 import sim.IsOldSim;
 import ticket._ThreeTwoTwo;
 import tstool.process.Descision;
@@ -36,7 +37,11 @@ class HowManyNumberAffected extends DescisionMultipleInput
 	}
 	override public function onNoClick():Void
 	{
-		this._nexts = [{step:Main.HISTORY.isClassInteractionInHistory(WhereAreU, No)?HowLongDoYouStayAbroad: IsOldSim}];
+		this._nexts = [{step:
+			Main.HISTORY.isClassInteractionInHistory(WhereAreU, No)?
+				HowLongDoYouStayAbroad: 
+				Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.GOMO ? CanSwapSimInOtherDevice: IsOldSim}];
+
 		super.onNoClick();
 	}
 	override public function validateNo():Bool

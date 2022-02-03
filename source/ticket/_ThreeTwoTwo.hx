@@ -24,6 +24,8 @@ class _ThreeTwoTwo extends ActionTicket
 		var ticket:SOTickets =  issue.exists ? SOTickets.MOBILE_322_BLACKCELLS: SOTickets.MOBILE_322 ;
 		if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.SOHO)
 			ticket.queue = Intro.SOHO_QUEUE;
+		else if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.GOMO)
+			 ticket.queue = Intro.GOMO_QUEUE;
 		super(ticket);
 	}
 	override public function onClick():Void

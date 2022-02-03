@@ -20,6 +20,8 @@ class _FiveThreeOne extends ActionTicket
 		
 		if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.SOHO)
 			ticket.queue = Intro.SOHO_QUEUE;
+		else if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.GOMO)
+			 ticket.queue = Intro.GOMO_QUEUE;
 		super(ticket);
 	}
 	override public function onClick():Void

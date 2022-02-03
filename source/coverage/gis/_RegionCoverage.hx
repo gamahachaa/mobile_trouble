@@ -10,10 +10,10 @@ import tstool.process.Descision;
  */
 class _RegionCoverage extends ActionRadios 
 {
-	static inline var G3:String = "3G";
-	static inline var G4:String = "4G";
-	static inline var OK:String = "ok";
-	static inline var NOK:String = "nok";
+	public static inline var G3:String = "3G";
+	public static inline var G4:String = "4G";
+	public static inline var OK:String = "ok";
+	public static inline var NOK:String = "nok";
 
 	public function new() 
 	{
