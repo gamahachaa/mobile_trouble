@@ -11,12 +11,13 @@ import tstool.process.DescisionMultipleInput;
 import tstool.process.Process;
 import xapi.Agent;
 import xapi.Verb;
+using string.StringUtils;
 
 /**
  * ...
  * @author bb
  */
-class IsTicketOpened extends DescisionMultipleInput 
+class IsTicketOpened extends DescisionMultipleInput
 {
 	static inline var MSISDN:String = "MSISDN";
 	static inline var SO_TICKET:String = "SO ticket";
@@ -24,7 +25,8 @@ class IsTicketOpened extends DescisionMultipleInput
 	public function new ()
 	{
 		super(
-		[{
+			[
+		{
 			ereg: new EReg("^(0)[0-9]{2}\\s{0,1}[0-9]{3}\\s{0,1}[0-9]{4}$","i"),
 			input:{
 				width:100,
@@ -44,7 +46,7 @@ class IsTicketOpened extends DescisionMultipleInput
 				mustValidate: [Yes]
 			}
 		}
-		]
+			]
 		);
 		Process.STORAGE = [];
 	}
@@ -61,53 +63,54 @@ class IsTicketOpened extends DescisionMultipleInput
 	*****************************/
 	override public function onYesClick():Void
 	{
-		
+
 		//this._nextYesProcesses = [new End()];
 		this._nexts = [{step: End, params: []}];
 		super.onYesClick();
-		
+
 	}
 	/*override public function validateYes():Bool
 	{
 		return true;
 	}*/
-	
+
 	override public function onNoClick():Void
 	{
 		//this._nextNoProcesses = [new HighUsageData()];
 		this._nexts = [{step: next(), params: []}];
 		super.onNoClick();
-		
+
 	}
-	
+	override function pushToHistory( buttonTxt:String, interactionType:Interactions,?values:Map<String,Dynamic>= null)
+	{
+		var ticket = StringTools.trim(multipleInputs.inputs.get(SO_TICKET).getInputedText())  ;
+		ticket = ticket == ""?"": ticket.buildSOLink();
+
+		super.pushToHistory( buttonTxt, interactionType, [
+								 SO_TICKET => ticket,
+								 MSISDN => multipleInputs.inputs.get(MSISDN).getInputedText()
+							 ]);
+	}
 	override public function validate(interaction:Interactions):Bool
 	{
 		//trace("capture.IsCompTicketOpened::validate");
-		
+
 		Main.customer.voIP = StringTools.replace(this.multipleInputs.inputs.get(MSISDN).getInputedText(), " ", "");
 		Main.customer.iri = Main.customer.voIP;
 		//#if debug
-				Main.trackH.reset(false);
-				Main.trackH.setActor(new Agent( MainApp.agent.iri, MainApp.agent.sAMAccountName));
-				Main.trackH.setVerb(Verb.initialized);
-				//Main.trackH.setStatementRefs(null);
-				var extensions:Map<String,Dynamic> = [];
-				extensions.set("https://customercare.salt.ch/admin/contracts/customer/", Main.customer.voIP);
-				extensions.set(Browser.location.origin +"/troubleshooting/script_version/", Main.VERSION);
-				
-				
-				Main.trackH.setActivityObject(issue.value,null,null,"http://activitystrea.ms/schema/1.0/process",extensions);
-				//Main.trackH.setCustomer();
-				Main.trackH.send();
-				Main.trackH.setVerb(Verb.resolved);
-			//#else
-		//Main.track.setVerb("initialized");
-		//Main.track.setStatementRef(null);
-		//Main.track.setCustomer(true);
-		//Main.track.setActivity( issue.value );
-        //Main.track.send();
-		//Main.track.setVerb("resolved");
-		//#end
+		Main.trackH.reset(false);
+		Main.trackH.setActor(new Agent( MainApp.agent.iri, MainApp.agent.sAMAccountName));
+		Main.trackH.setVerb(Verb.initialized);
+		//Main.trackH.setStatementRefs(null);
+		var extensions:Map<String,Dynamic> = [];
+		extensions.set("https://customercare.salt.ch/admin/contracts/customer/", Main.customer.voIP);
+		extensions.set(Browser.location.origin +"/troubleshooting/script_version/", Main.VERSION);
+
+		Main.trackH.setActivityObject(issue.value,null,null,"http://activitystrea.ms/schema/1.0/process",extensions);
+		//Main.trackH.setCustomer();
+		Main.trackH.send();
+		Main.trackH.setVerb(Verb.resolved);
+
 		Process.STORE(MSISDN, '${Main.customer.voIP}' );
 		return super.validate(interaction);
 	}
@@ -117,7 +120,7 @@ class IsTicketOpened extends DescisionMultipleInput
 	}*/
 	inline function next():Class<Process>
 	{
-		
+
 		return switch (issue.value)
 		{
 			case Intro.NO_INTL_CALLS: if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.GOMO) ArethereAnyBarrings else IsInCollection;
@@ -125,5 +128,5 @@ class IsTicketOpened extends DescisionMultipleInput
 			case _ : WhereAreU;
 		}
 	}
-	
+
 }
