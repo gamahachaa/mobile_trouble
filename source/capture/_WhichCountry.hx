@@ -4,7 +4,7 @@ import calls.ref600.WasHideCallActivated;
 import tstool.layout.History.ValueReturn;
 import tstool.process.ActionMultipleInput;
 import tstool.process.Process;
-import tstool.utils.ExpReg;
+import regex.ExpReg;
 
 /**
  * ...

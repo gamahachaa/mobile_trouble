@@ -6,6 +6,7 @@ import sim.IsOldSim;
 import ticket._ThreeTwoTwo;
 import tstool.process.Descision;
 import tstool.process.DescisionMultipleInput;
+import regex.ExpReg;
 
 /**
  * ...
@@ -18,7 +19,8 @@ class HowManyNumberAffected extends DescisionMultipleInput
 	{
 		super(
 		[{
-			ereg: new EReg("^(0)[0-9]{2}\\s{0,1}[0-9]{3}\\s{0,1}[0-9]{4}$","i"),
+			ereg: new EReg(ExpReg.MISIDN_UNIVERAL,"i"),
+			//ereg: new EReg("^(0)[0-9]{2}\\s{0,1}[0-9]{3}\\s{0,1}[0-9]{4}$","i"),
 			input:{
 				width:250,
 				prefix:"Single number",

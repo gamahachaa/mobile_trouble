@@ -5,7 +5,7 @@ import tstool.process.MultipleInput.ValidatedInputs;
 //import ticket._FiveThreeOne;
 import tstool.process.ActionMultipleInput;
 import tstool.process.Process;
-import tstool.utils.ExpReg;
+import regex.ExpReg;
 import tstool.layout.IPositionable.Direction;
 import tstool.layout.History.Interactions;
 /**

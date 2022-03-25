@@ -120,9 +120,6 @@ class Main extends MainApp
 			next = new Intro();
 			//next = new _CheckNetWork();
 		#end
-		#if debug
-		trace("Main::MOVE_ON::MOVE_ON", MOVE_ON );
-		#end
 		tongue.initialize(MainApp.agent.mainLanguage, ()->(FlxG.switchState( old ? next : tuto)) );
 	}
 }

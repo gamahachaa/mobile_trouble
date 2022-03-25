@@ -3,7 +3,7 @@ package coverage.gis;
 //import tstool.process.Action;
 import tstool.process.ActionMultipleInput;
 import tstool.process.Process;
-import tstool.utils.ExpReg;
+import regex.ExpReg;
 
 /**
  * ...

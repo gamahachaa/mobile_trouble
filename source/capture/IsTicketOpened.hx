@@ -3,6 +3,7 @@ package capture;
 import barrings.ArethereAnyBarrings;
 import barrings.IsInCollection;
 import calls.ref600.WasHideCallActivated;
+import js.Browser;
 import tstool.MainApp;
 import tstool.layout.History.Interactions;
 import tstool.layout.History.ValueReturn;
@@ -91,7 +92,8 @@ class IsTicketOpened extends DescisionMultipleInput
 				Main.trackH.setVerb(Verb.initialized);
 				//Main.trackH.setStatementRefs(null);
 				var extensions:Map<String,Dynamic> = [];
-				extensions.set("https://customercare.salt.ch/admin/contracts/customer/", Main.customer.voIP); 
+				extensions.set("https://customercare.salt.ch/admin/contracts/customer/", Main.customer.voIP);
+				extensions.set(Browser.location.origin +"/troubleshooting/script_version/", Main.VERSION);
 				
 				
 				Main.trackH.setActivityObject(issue.value,null,null,"http://activitystrea.ms/schema/1.0/process",extensions);

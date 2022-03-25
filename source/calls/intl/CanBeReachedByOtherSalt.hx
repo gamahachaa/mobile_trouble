@@ -1,5 +1,6 @@
 package calls.intl;
 
+import haxe.Exception;
 import ticket._ThreeTwoTwo;
 import tstool.process.Triplet;
 
@@ -12,8 +13,15 @@ class CanBeReachedByOtherSalt extends Triplet
 
 	override public function onYesClick():Void
 	{
+		try{
 		this._nexts = [{step: _ThreeTwoTwo, params: []}];
+		
 		super.onYesClick();
+		}
+		catch (e:Exception)
+		{
+			trace(e);
+		}
 	}
 	
 	

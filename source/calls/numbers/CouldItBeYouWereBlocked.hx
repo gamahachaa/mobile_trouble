@@ -11,7 +11,7 @@ import tstool.process.Descision;
  */
 class CouldItBeYouWereBlocked extends Descision 
 {
-
+    
 	override public function onYesClick():Void
 	{
 		this._nexts = [{step: _AddMemoInMarilyn, params: []}];
@@ -24,5 +24,6 @@ class CouldItBeYouWereBlocked extends Descision
 			this._nexts = [{step: CanSwapSimInOtherDevice}];
 		super.onNoClick();
 	}
+	
 	
 }
