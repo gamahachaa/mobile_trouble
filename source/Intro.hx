@@ -91,6 +91,7 @@ class Intro extends TripletRadios
 		Main.customer.reset();
 		Process.INIT();
 		super.create();
+		Main.trackH.reset(false);
 		//#if !debug
 		Main.VERSION_TRACKER.scriptChangedSignal.add(onNewVersion);
 		Main.VERSION_TRACKER.request();
@@ -113,6 +114,7 @@ class Intro extends TripletRadios
 		}
 		else{
 			closeSubState();
+			MainApp.VERSION_TIMER_value = MainApp.VERSION_TIMER_DURATION;
 		}
 	}
 }

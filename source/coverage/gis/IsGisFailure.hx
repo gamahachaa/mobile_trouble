@@ -16,9 +16,9 @@ import tstool.process.Process;
 class IsGisFailure extends Descision 
 {
 	static inline var CITY:String = "CITY";
-	static inline var ZIP:String = "ZIP CODE";
-	static inline var CELL:String = "lncelname";
-	static inline var SITE:String = "Site";
+	static inline var ZIP:String = "Cell Postal Code";
+	static inline var CELL:String = "Site";
+	//static inline var SITE:String = "Site";
 	var blackcells:Array<String>;
 	var hasBlackCells:Bool;
 	public static inline var BLACK_CELLS:String = "BlackCells";
@@ -45,26 +45,26 @@ class IsGisFailure extends Descision
 	}
 	function checkBlackCell()
 	{
-		var cvsString:String =  Assets.getText("assets/data/2108.csv");
+		var cvsString:String =  Assets.getText("assets/data/black_cell_new.csv");
 		var csv:Array<Array<String>> = cvsString.parseCsv(";");
 		var index:Array<String> = csv[0];
-		var cityIndex = index.indexOf(CITY);
+		//var cityIndex = index.indexOf(CITY);
 		var zipIndex = index.indexOf(ZIP);
 		var cellIndex = index.indexOf(CELL);
-		var siteIndex = index.indexOf(SITE);
+		//var siteIndex = index.indexOf(SITE);
 		var zip:String = Main.HISTORY.findValueOfFirstClassInHistory(_CheckNetWork, _CheckNetWork.ZIP).value.trim();
-		var city:String = Main.HISTORY.findValueOfFirstClassInHistory(_CheckNetWork, _CheckNetWork.CITY).value;
+		//var city:String = Main.HISTORY.findValueOfFirstClassInHistory(_CheckNetWork, _CheckNetWork.CITY).value;
 		blackcells = [];
 		for (cell in csv)
 		{
 			#if debug
-			trace("coverage.gis.IsGisFailure::checkBlackCell::cell[zipIndex]", cell[zipIndex] );
-			trace("coverage.gis.IsGisFailure::checkBlackCell:: zip", zip );
-			trace("coverage.gis.IsGisFailure::checkBlackCell::cell[zipIndex] == zip", cell[zipIndex] == zip );
+			//trace("coverage.gis.IsGisFailure::checkBlackCell::cell[zipIndex]", cell[zipIndex] );
+			//trace("coverage.gis.IsGisFailure::checkBlackCell:: zip", zip );
+			trace("coverage.gis.IsGisFailure::checkBlackCell::cell[zipIndex] == zip", cell[zipIndex].trim() == zip,cell[zipIndex],zip  );
 			#end
 			if ( cell[zipIndex].trim() == zip)
 			{
-				blackcells.push(cell[cellIndex] + "-" + cell[siteIndex]);
+				blackcells.push(cell[cellIndex] + "- zip: " + cell[zipIndex]);
 			}
 		}
 		if (blackcells.length > 0){

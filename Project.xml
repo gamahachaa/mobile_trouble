@@ -30,7 +30,7 @@
 	
 	<set name="BUILD_DIR" value="export" />
 	<classpath name="source" />
-	<classpath name="../_myPackages/utils" />
+	<!--<classpath name="../_myPackages/utils" />-->
 	<assets path="assets" />
 	
 	<!-- _______________________________ Libraries ______________________________ -->
@@ -48,6 +48,8 @@
 	<haxelib name="markdown" />
 	<haxelib name="hscript" />
 	<haxelib name="tstool" />
+	<haxelib name="quality" />
+	<haxelib name="utils" />
 	<haxelib name="uglifyjs" unless="debug"/>
 	
 	<!--<haxelib name="uglifyjs"/>-->

@@ -7,7 +7,7 @@ import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.FlxState;
 import flixel.input.keyboard.FlxKey;
-import tstool.utils.XapiHelper;
+
 
 import lime.utils.Assets;
 import tstool.layout.UI;
@@ -41,6 +41,7 @@ import tstool.utils.XapiTracker;
 
 class Main extends MainApp
 {
+	
 	//public static var LIB_FOLDER:String;
 	//public static var MAIL_WRAPPER_URL:String = LIB_FOLDER + "php/mail/index.php";
 	
@@ -51,7 +52,7 @@ class Main extends MainApp
 	public static var customer:Customer;
 	//public static var track:XapiTracker;
 	//#if debug
-	public static var trackH:XapiHelper;
+	public static var trackH:XapiTracker;
 	//#else
 	//public static var track:XapiTracker;
 	//#end
@@ -59,6 +60,8 @@ class Main extends MainApp
 	public static var VERSION_TRACKER:VersionTracker;
 	public static var LOCATION:Location;
 	public static var DEBUG:Bool;
+	
+	public static var _mainDebug:Bool;
 	public static var DEBUG_LEVEL:Int;
 	public static var COOKIE: FlxSave;
 	
@@ -91,6 +94,7 @@ class Main extends MainApp
 		//track =  MainApp.xapiTracker;
 		//#end
 		DEBUG = MainApp.debug;
+		_mainDebug = MainApp.debug;
 		DEBUG_LEVEL = 1;
 		VERSION_TRACKER = MainApp.versionTracker;
 		customer = MainApp.cust;

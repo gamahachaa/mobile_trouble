@@ -98,7 +98,8 @@ class IsTicketOpened extends DescisionMultipleInput
 		Main.customer.voIP = StringTools.replace(this.multipleInputs.inputs.get(MSISDN).getInputedText(), " ", "");
 		Main.customer.iri = Main.customer.voIP;
 		//#if debug
-		Main.trackH.reset(false);
+		//Main.trackH.reset(false);
+		Main.trackH.setDefaultContext(MainApp.translator.locale, "mobile.qtool@salt.ch");
 		Main.trackH.setActor(new Agent( MainApp.agent.iri, MainApp.agent.sAMAccountName));
 		Main.trackH.setVerb(Verb.initialized);
 		//Main.trackH.setStatementRefs(null);
