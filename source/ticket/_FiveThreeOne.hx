@@ -10,7 +10,7 @@ import tstool.salt.SOTickets;
  * ...
  * @author bb
  */
-class _FiveThreeOne extends ActionTicket 
+class _FiveThreeOne extends MobileTicket 
 {
 
 	public function new() 
@@ -18,10 +18,6 @@ class _FiveThreeOne extends ActionTicket
 		var issue:ValueReturn = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
 		var ticket = issue.value == Intro.REF_600 ? SOTickets.MOBILE_531_ESCA: SOTickets.MOBILE_531;
 		
-		if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.SOHO)
-			ticket.queue = Intro.SOHO_QUEUE;
-		else if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.GOMO)
-			 ticket.queue = Intro.GOMO_QUEUE;
 		super(ticket);
 	}
 	override public function onClick():Void

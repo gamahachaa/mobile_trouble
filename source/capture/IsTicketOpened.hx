@@ -111,7 +111,7 @@ class IsTicketOpened extends DescisionMultipleInput
 		//Main.trackH.setCustomer();
 		Main.trackH.send();
 		Main.trackH.setVerb(Verb.resolved);
-
+        Main.STORAGE_DISPLAY.push(MSISDN);
 		Process.STORE(MSISDN, '${Main.customer.voIP}' );
 		return super.validate(interaction);
 	}

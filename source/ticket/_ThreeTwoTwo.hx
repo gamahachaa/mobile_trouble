@@ -11,7 +11,7 @@ import tstool.salt.SOTickets;
  * ...
  * @author bb
  */
-class _ThreeTwoTwo extends ActionTicket
+class _ThreeTwoTwo extends MobileTicket
 {
 
 	public function new()
@@ -27,13 +27,13 @@ class _ThreeTwoTwo extends ActionTicket
 			}
 			var ticket:SOTickets =  issue.exists ? SOTickets.MOBILE_322_BLACKCELLS: SOTickets.MOBILE_322 ;
 
-			if (Main.customer.dataSet.exists(Intro.PORTFOLIO) && Main.customer.dataSet.get(Intro.PORTFOLIO).exists(Intro.SEGMENT))
-			{
-				if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.SOHO)
-					ticket.queue = Intro.SOHO_QUEUE;
-				else if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.GOMO)
-					ticket.queue = Intro.GOMO_QUEUE;
-			}
+			//if (Main.customer.dataSet.exists(Intro.PORTFOLIO) && Main.customer.dataSet.get(Intro.PORTFOLIO).exists(Intro.SEGMENT))
+			//{
+				//if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.SOHO)
+					//ticket.queue = Intro.SOHO_QUEUE;
+				//else if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.GOMO)
+					//ticket.queue = Intro.GOMO_QUEUE;
+			//}
 			
 			super(ticket);
 			

@@ -9,7 +9,7 @@ import tstool.salt.SOTickets;
  * ...
  * @author bb
  */
-class _ThreeTwoOne extends ActionTicket 
+class _ThreeTwoOne extends MobileTicket 
 {
 
 	public function new() 
@@ -21,10 +21,7 @@ class _ThreeTwoOne extends ActionTicket
 			issue = Main.HISTORY.findValueOfFirstClassInHistory(IsGisFailure, IsGisFailure.BLACK_CELLS);
 		}
 		var ticket:SOTickets =  issue.exists ? SOTickets.MOBILE_321_BLACKCELLS: SOTickets.MOBILE_321;
-		if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.SOHO)
-			ticket.queue = Intro.SOHO_QUEUE;
-		else if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.GOMO)
-			 ticket.queue = Intro.GOMO_QUEUE;
+		
 		super(ticket);
 	}
 	override public function onClick():Void

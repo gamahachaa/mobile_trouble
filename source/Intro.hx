@@ -2,6 +2,7 @@ package;
 
 import capture.IsTicketOpened;
 import capture.WhereAreU;
+import capture.WhichB2B;
 import js.Browser;
 import tstool.layout.UI;
 //import tstool.process.ActionRadios;
@@ -29,6 +30,7 @@ class Intro extends TripletRadios
 	public static inline var GOMO:String = "GoMo";
 	public static inline var PORTFOLIO:String = "PORTFOLIO";
 	public static inline var SOHO:String = "SOHO";
+	public static inline var LARGE:String = "LARGE";
 	public static inline var ISSUE:String = "Issue";
 	public static inline var NO_CALLS:String = "NoCalls";
 	public static inline var BAD_CALL_QUALITY:String = "BadCalls";
@@ -39,6 +41,7 @@ class Intro extends TripletRadios
 	
 	public static inline var SOHO_QUEUE:String = "B2B_SOHO_TECH_SO";
 	public static inline var GOMO_QUEUE:String = "GOMO_TECH_SO";
+	public static inline var LARGE_QUEUE:String = "B2B_LAS_DIRECT_SO";
 	
 	public static inline var REF_600:String = "NumberWronglyDisplayedAbroad";
 
@@ -78,13 +81,16 @@ class Intro extends TripletRadios
 	}
 	override public function onNoClick():Void
 	{
-		Main.customer.dataSet.set(PORTFOLIO, [SEGMENT => SOHO]);
-		this._nexts = [{step:  getNext(), params: []}];
+		//Main.customer.dataSet.set(PORTFOLIO, [SEGMENT => SOHO]);
+		this._nexts = [{step:  getNextB2B(), params: []}];
 		if(validate())
 			super.onNoClick();
 	}
 	inline function getNext():Class<Process>{
 		return IsTicketOpened;
+	}
+	inline function getNextB2B():Class<Process>{
+		return capture.WhichB2B;
 	}
 	override public function create()
 	{
@@ -115,6 +121,16 @@ class Intro extends TripletRadios
 		else{
 			closeSubState();
 			MainApp.VERSION_TIMER_value = MainApp.VERSION_TIMER_DURATION;
+		}
+	}
+	static public inline function GET_SPECIAL_QUEUE():String
+	{
+		return switch(Main.customer.dataSet.get(PORTFOLIO).get(SEGMENT) )
+		{
+			case SOHO : SOHO_QUEUE;
+			case LARGE: LARGE_QUEUE;
+			case GOMO: GOMO_QUEUE;
+			case _ : "";
 		}
 	}
 }

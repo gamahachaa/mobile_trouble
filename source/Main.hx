@@ -70,6 +70,8 @@ class Main extends MainApp
 	public static inline var START_STEP:Class<Process> = Intro;
 	public static inline var INTRO_PIC:String = "intro/favicon.png";
 	public static inline var LIB_FOLDER_LOGIN:String= "/commonlibs/";
+	static public inline var TMP_FILTER_ASSET_PATH:String = "assets/data/tmp/";
+	static public var STORAGE_DISPLAY:Array<String> = [];
 	/**
 	 * FORMAT COLOR
 	 * */
