@@ -34,6 +34,8 @@ class _ThreeTwoTwo extends MobileTicket
 				//else if (Main.customer.dataSet.get(Intro.PORTFOLIO).get(Intro.SEGMENT) == Intro.GOMO)
 					//ticket.queue = Intro.GOMO_QUEUE;
 			//}
+			var issueMain = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
+			if (issueMain.value == Intro.NO_CALLS_VOLTE) ticket.desc = ticket.desc + " VOLTE";
 			
 			super(ticket);
 			

@@ -23,7 +23,7 @@ class _CouldBeNetwork extends Action
 	function branchMe():Class<Process>
 	{
 		var issue = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
-		return if (issue.value == Intro.NO_CALLS)
+		return if (issue.value == Intro.NO_CALLS || issue.value == Intro.NO_CALLS_VOLTE)
 		{
 			/*******************
 			/* Cannot make calls

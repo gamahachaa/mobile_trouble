@@ -44,7 +44,7 @@ class CanSwapSimInOtherDevice extends Triplet
 	inline function nextMidNo():Class<Process>
 	{
 		return
-		if (issue.value == Intro.NO_CALLS)
+		if (issue.value == Intro.NO_CALLS || issue.value == Intro.NO_CALLS_VOLTE)
 		{
 			if (Main.HISTORY.isClassInteractionInHistory(coverage.HowIsCoverage, Yes))
 			{

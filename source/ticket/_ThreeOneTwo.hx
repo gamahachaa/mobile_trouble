@@ -14,7 +14,8 @@ class _ThreeOneTwo extends MobileTicket
 	{
 		
 		var ticket:SOTickets =  SOTickets.MOBILE_312;
-		
+		var issueMain = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
+		if (issueMain.value == Intro.NO_CALLS_VOLTE) ticket.desc += " VOLTE";
 		super(ticket);
 	}
 	override public function onClick():Void
