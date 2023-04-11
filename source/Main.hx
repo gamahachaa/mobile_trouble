@@ -26,7 +26,7 @@ import js.html.Location;
 import tstool.layout.History;
 import tstool.layout.Login;
 //import tstool.layout.SaltColor;
-import tstool.salt.Agent;
+import tstool.salt.SaltAgent;
 import tstool.salt.Customer;
 //import tstool.utils.Csv;
 import tstool.utils.Translator;
@@ -47,8 +47,8 @@ class Main extends MainApp
 	
 	public static var HISTORY:History;
 	public static var adminFile:tstool.utils.Csv;
-	public static var tongue:Translator;
-	public static var user:Agent;
+	//public static var tongue:Translator;
+	public static var user:SaltAgent;
 	public static var customer:Customer;
 	//public static var track:XapiTracker;
 	//#if debug
@@ -58,18 +58,18 @@ class Main extends MainApp
 	//#end
 	public static var VERSION:String;
 	public static var VERSION_TRACKER:VersionTracker;
-	public static var LOCATION:Location;
+	//public static var LOCATION:Location;
 	public static var DEBUG:Bool;
 	
-	public static var _mainDebug:Bool;
+	//public static var _mainDebug:Bool;
 	public static var DEBUG_LEVEL:Int;
 	public static var COOKIE: FlxSave;
 	
-	public static var LANGS:Array<String> = ["fr-FR","de-DE","en-GB","it-IT"];
+	//public static var LANGS:Array<String> = ["fr-FR","de-DE","en-GB","it-IT"];
 	public static inline var LAST_STEP:Class<Process> = End;
 	public static inline var START_STEP:Class<Process> = Intro;
-	public static inline var INTRO_PIC:String = "intro/favicon.png";
-	public static inline var LIB_FOLDER_LOGIN:String= "/commonlibs/";
+	//public static inline var INTRO_PIC:String = "intro/favicon.png";
+	//public static inline var LIB_FOLDER_LOGIN:String= "/commonlibs/";
 	static public inline var TMP_FILTER_ASSET_PATH:String = "assets/data/tmp/";
 	static public var STORAGE_DISPLAY:Array<String> = [];
 	/**
@@ -78,17 +78,12 @@ class Main extends MainApp
 	
 	public function new() 
 	{
-		super({
-				cookie:"mobile_trouble_20210205.user",
-				scriptName:"mobile_trouble",
-				libFolder: LIB_FOLDER_LOGIN
-				
-		});
+		super();
 		//LIB_FOLDER = "../trouble/";
-		tongue = MainApp.translator;
+		//tongue = MainApp.translator;
 		//COOKIE = MainApp.save;
 		HISTORY = MainApp.stack;
-		LOCATION = MainApp.location;
+		//LOCATION = MainApp.location;
 		//track =  MainApp.xapiTracker;
 		//#if debug
 		trackH =  MainApp.xapiHelper;
@@ -96,7 +91,7 @@ class Main extends MainApp
 		//track =  MainApp.xapiTracker;
 		//#end
 		DEBUG = MainApp.debug;
-		_mainDebug = MainApp.debug;
+		//_mainDebug = MainApp.debug;
 		DEBUG_LEVEL = 1;
 		VERSION_TRACKER = MainApp.versionTracker;
 		customer = MainApp.cust;
@@ -126,6 +121,6 @@ class Main extends MainApp
 			next = new Intro();
 			//next = new _CheckNetWork();
 		#end
-		tongue.initialize(MainApp.agent.mainLanguage, ()->(FlxG.switchState( old ? next : tuto)) );
+		MainApp.translator.initialize(MainApp.agent.mainLanguage, ()->(FlxG.switchState( old ? next : tuto)) );
 	}
 }
