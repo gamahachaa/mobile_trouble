@@ -124,5 +124,6 @@
 	<!-- _________________________________ Custom _______________________________ -->
 	
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
-		<haxeflag name = "--macro" value="tstool.macros.TranslationVerificator.test(['Main','Tuto'])"/>
+	<icon path="assets/images/favicon.png" />	
+	<haxeflag name = "--macro" value="tstool.macros.TranslationVerificator.test(['Main','Tuto'])"/>
 </project>
