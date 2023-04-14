@@ -55,7 +55,7 @@ class HowIsCoverage extends Triplet
 	inline function goNextYes():Class<Process>
 	{
 		var issue:ValueReturn = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
-		return if (issue.value == Intro.NO_CALLS)
+		return if (issue.value == Intro.NO_CALLS || issue.value == Intro.NO_CALLS_VOLTE)
 		{
 			/******** NO calls at all *********/
 			TypeOfSubscription;

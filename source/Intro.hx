@@ -33,6 +33,7 @@ class Intro extends TripletRadios
 	public static inline var LARGE:String = "LARGE";
 	public static inline var ISSUE:String = "Issue";
 	public static inline var NO_CALLS:String = "NoCalls";
+	public static inline var NO_CALLS_VOLTE:String = "NoCallsVolte";
 	public static inline var BAD_CALL_QUALITY:String = "BadCalls";
 	//public static inline var DROP_CALLS:String = "DropCalls";
 	public static inline var NO_INTERNET:String = "NoInternet";
@@ -52,7 +53,7 @@ class Intro extends TripletRadios
 			{
 				title: ISSUE,
 				hasTranslation:true,
-				values: [NO_CALLS, BAD_CALL_QUALITY, NO_INTERNET, SLOW_INTERNET, NO_INTL_CALLS, REF_600]
+				values: [NO_CALLS, NO_CALLS_VOLTE, BAD_CALL_QUALITY, NO_INTERNET, SLOW_INTERNET, NO_INTL_CALLS, REF_600]
 				//values: [NO_CALLS, BAD_CALL_QUALITY, DROP_CALLS, NO_INTERNET, SLOW_INTERNET, NO_INTL_CALLS, REF_600]
 			}
 		]

@@ -61,31 +61,23 @@ echo "DEV=%DEV%"
 if %DEV%==1 (
 	if "%1"=="release" goto :minify
 	powershell -Command "(gc %BINDIR%/index.html) -replace './%oldScriptName%', './%newScriptName%' | Out-File -encoding UTF8 %BINDIR%/index.html"
-	if "%1"=="debug" goto :follow
+	if "%1"=="debug" goto :NOTMINIFY
 ) ELSE (
-	goto :minify
-	rem if "%1"=="release" goto :minify
-	rem if "%1"=="debug" goto :EXPORT
+	if "%1"=="release" goto :minify
+	if "%1"=="debug" goto :EXPORT
 )
 
-
 :minify
-echo "MINIFY"
 powershell -Command "(gc %BINDIR%/index.html) -replace './%oldScriptName%', './%newScriptNameMin%' | Out-File -encoding UTF8 %BINDIR%/index.html"
 powershell -Command "Rename-Item -Path "%BINDIR%/%mainScript%.min.js" -NewName %newScriptNameMin%"
-powershell -Command "Rename-Item -Path "%BINDIR%/%mainScript%.js.map" -NewName %newMapName%"
-
 goto :EXPORT
 
-:follow
+:NOTMINIFY
 
 powershell -Command "Rename-Item -Path "%BINDIR%/%mainScript%.js" -NewName %newScriptName%"
 powershell -Command "Rename-Item -Path "%BINDIR%/%mainScript%.js.map" -NewName %newMapName%"
 
-
 :EXPORT
-
-
 
 if %DEV%==1 (
 	if "%1"=="" goto :dead
@@ -97,25 +89,29 @@ if %DEV%==1 (
 	if "%1"=="release" goto :release
 )
 
+rem echo %1
 
 :test
-
-powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% add ."
-powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% commit -am pushing_to_test"
-powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% push origin dev"
+call send_test.bat "%1 %DEV% %BINDIR% %serverFolderName%"
 
 goto :completed
 
 :release
-powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% add ."
-powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% commit -am pushing_to_prod"
-powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% push origin master"
+rem PUSH to PROD SERVER 
+call send_prod.bat "%1 %DEV% %BINDIR% %serverFolderName%"
+
+rem robocopy export\html5\bin "C:\xampp\htdocs\localhost" * /E
 
 goto :completed
 
 :end
-echo "JUST DEBUGGING"
+
+rem echo "JUST DEBUGGING"
+
 :dead
+
+
+
 echo "NO DIRECTIVES"
 
 :completed

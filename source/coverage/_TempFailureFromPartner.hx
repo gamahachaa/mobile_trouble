@@ -22,7 +22,7 @@ class _TempFailureFromPartner extends Action
 	function branchMe():Class<Process>
 	{
 		var issue:ValueReturn = Main.HISTORY.findValueOfFirstClassInHistory(Intro, Intro.ISSUE);
-		return if (issue.value == Intro.NO_CALLS)
+		return if (issue.value == Intro.NO_CALLS || issue.value == Intro.NO_CALLS_VOLTE)
 		{
 			/*******************
 			/* Cannot make calls
