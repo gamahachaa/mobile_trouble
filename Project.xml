@@ -52,7 +52,7 @@
 	<haxelib name="tstool" />
 	<haxelib name="quality" />
 	<haxelib name="utils" />
-	<haxelib name="uglifyjs" unless="debug"/>
+	<haxelib name="uglifyjs"/>
 	
 	<!--<haxelib name="uglifyjs"/>-->
 	<!----------------------------------------->
