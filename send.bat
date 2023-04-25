@@ -104,6 +104,7 @@ powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% add ."
 powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% commit -am pushing_to_test"
 powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% push origin dev"
 
+powershell -Command "git chekout dev"
 powershell -Command "git add ."
 powershell -Command "git commit -am auto_commit_to_dev"
 powershell -Command "git push origin dev"
@@ -115,7 +116,8 @@ powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% add ."
 powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% commit -am pushing_to_prod"
 powershell -Command "git --git-dir=%BINDIR%\.git --work-tree=%BINDIR% push origin master"
 
-powershell -Command "git add ."
+powershell -Command "git chekout master"
+powershell -Command "git merge dev"
 powershell -Command "git commit -am auto_commit_to_master"
 powershell -Command "git push origin master"
 
