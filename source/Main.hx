@@ -2,10 +2,10 @@ package;
 
 
 
-import coverage.gis._CheckNetWork;
+//import coverage.gis._CheckNetWork;import flixel.FlxState;
 import flixel.FlxG;
 import flixel.FlxGame;
-import flixel.FlxState;
+
 import flixel.input.keyboard.FlxKey;
 
 
@@ -13,8 +13,8 @@ import lime.utils.Assets;
 import tstool.layout.UI;
 import tstool.process.Process;
 //import flixel.system.FlxAssets;
-import flixel.text.FlxText.FlxTextFormat;
-import flixel.text.FlxText.FlxTextFormatMarkerPair;
+//import flixel.text.FlxText.FlxTextFormat;
+//import flixel.text.FlxText.FlxTextFormatMarkerPair;
 import flixel.util.FlxColor;
 import flixel.util.FlxSave;
 import tstool.MainApp;
