@@ -9,18 +9,18 @@ import flixel.FlxGame;
 import flixel.input.keyboard.FlxKey;
 
 
-import lime.utils.Assets;
-import tstool.layout.UI;
+//import lime.utils.Assets;
+//import tstool.layout.UI;
 import tstool.process.Process;
 //import flixel.system.FlxAssets;
 //import flixel.text.FlxText.FlxTextFormat;
 //import flixel.text.FlxText.FlxTextFormatMarkerPair;
-import flixel.util.FlxColor;
+//import flixel.util.FlxColor;
 import flixel.util.FlxSave;
 import tstool.MainApp;
 
-import js.Browser;
-import js.html.Location;
+//import js.Browser;
+//import js.html.Location;
 //import lime.utils.Assets;
 //import openfl.display.Sprite;
 import tstool.layout.History;
@@ -29,7 +29,7 @@ import tstool.layout.Login;
 import tstool.salt.SaltAgent;
 import tstool.salt.Customer;
 //import tstool.utils.Csv;
-import tstool.utils.Translator;
+//import tstool.utils.Translator;
 import tstool.utils.VersionTracker;
 import tstool.utils.XapiTracker;
 
@@ -41,10 +41,6 @@ import tstool.utils.XapiTracker;
 
 class Main extends MainApp
 {
-	
-	//public static var LIB_FOLDER:String;
-	//public static var MAIL_WRAPPER_URL:String = LIB_FOLDER + "php/mail/index.php";
-	
 	public static var HISTORY:History;
 	public static var adminFile:tstool.utils.Csv;
 	//public static var tongue:Translator;
