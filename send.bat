@@ -120,7 +120,7 @@ powershell -Command "git checkout master"
 powershell -Command "git merge dev"
 powershell -Command "git commit -am auto_commit_to_master"
 powershell -Command "git push origin master"
-powershell -Command "git checkout dev"
+rem powershell -Command "git checkout dev"
 
 goto :completed
 
